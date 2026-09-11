@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="#070B14">
+
+    <!-- Left Realm Canvas / 3D Scene Viewport -->
+    <FrameLayout
+        android:id="@+id/viewport_3d_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.4" />
+
+    <!-- Right HUD & Management Dashboard Pane -->
+    <FrameLayout
+        android:id="@+id/compose_hud_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.0"
+        android:background="#0D1322" />
+</LinearLayout>

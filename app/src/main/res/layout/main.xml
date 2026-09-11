@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/layout_root"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/bg_loading_gradient"
+	android:clipChildren="false"
+	android:clipToPadding="false">
+
+	<!-- Outer Rotating Qi Aura Ring -->
+	<View
+		android:id="@+id/view_aura"
+		android:layout_width="450dp"
+		android:layout_height="450dp"
+		android:background="@drawable/circle_glow"
+		android:layout_gravity="center"
+		android:alpha="0.45" />
+
+	<!-- Secondary Inner Mystic Pulse Ring -->
+	<View
+		android:id="@+id/view_aura_inner"
+		android:layout_width="260dp"
+		android:layout_height="260dp"
+		android:background="@drawable/circle_glow"
+		android:layout_gravity="center"
+		android:alpha="0.3" />
+
+	<!-- Main Center Container -->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:orientation="vertical"
+		android:gravity="center_horizontal"
+		android:paddingStart="24dp"
+		android:paddingEnd="24dp"
+		android:paddingTop="48dp"
+		android:paddingBottom="24dp">
+
+		<!-- Top Mystic Emblem & Floating Sect Crest -->
+		<FrameLayout
+			android:id="@+id/layout_emblem"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:layout_marginBottom="16dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:background="@drawable/bg_ripple_circle">
+
+			<ImageView
+				android:id="@+id/imageview_glow_bg"
+				android:layout_width="160dp"
+				android:layout_height="160dp"
+				android:scaleType="fitCenter"
+				android:layout_gravity="center"
+				android:src="@drawable/circle_glow"
+				android:alpha="0.5"
+				android:contentDescription="AuraGlow" />
+
+			<ImageView
+				android:id="@+id/imageview1"
+				android:layout_width="120dp"
+				android:layout_height="120dp"
+				android:scaleType="fitCenter"
+				android:layout_gravity="center"
+				android:src="@mipmap/ic_launcher"
+				android:contentDescription="SectLogo" />
+		</FrameLayout>
+
+		<!-- Cultivation Title with Golden Glow -->
+		<TextView
+			android:id="@+id/tv_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:clickable="true"
+			android:focusable="true"
+			android:paddingStart="12dp"
+			android:paddingEnd="12dp"
+			android:paddingTop="4dp"
+			android:paddingBottom="4dp"
+			android:background="@drawable/bg_ripple_gold"
+			android:text="SECT IDLE"
+			android:textSize="32sp"
+			android:textStyle="bold"
+			android:textColor="#FFD700"
+			android:shadowColor="#FF6D00"
+			android:shadowDx="0"
+			android:shadowDy="0"
+			android:shadowRadius="16"
+			android:letterSpacing="0.12"
+			android:fontFamily="serif" />
+
+		<!-- Subtitle: Xianxia Donghua Theme -->
+		<TextView
+			android:id="@+id/tv_subtitle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="6dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:text="修仙之路 · THE IMMORTAL PATH"
+			android:textSize="12sp"
+			android:textStyle="bold"
+			android:textColor="#E6C588"
+			android:letterSpacing="0.1"
+			android:fontFamily="serif" />
+
+		<!-- Cultivation Realm Stage Indicator Tag -->
+		<TextView
+			android:id="@+id/tv_realm_stage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="14dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:paddingStart="14dp"
+			android:paddingEnd="14dp"
+			android:paddingTop="6dp"
+			android:paddingBottom="6dp"
+			android:background="@drawable/bg_button_jade"
+			android:text="✦ Qi Gathering · Gathering Heaven &amp; Earth Essence ✦"
+			android:textSize="11sp"
+			android:textColor="#00E5FF"
+			android:fontFamily="sans-serif-medium" />
+
+		<!-- Flexible Spacer -->
+		<View
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_weight="1" />
+
+		<!-- Progress Bar Section -->
+		<LinearLayout
+			android:id="@+id/layout_progress_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:gravity="center_horizontal"
+			android:layout_marginBottom="24dp"
+			android:clickable="true"
+			android:focusable="true">
+
+			<ProgressBar
+				android:id="@+id/progressBar1"
+				android:layout_width="280dp"
+				android:layout_height="10dp"
+				android:background="@drawable/progress_bg"
+				android:indeterminate="false"
+				style="?android:progressBarStyleHorizontal"
+				android:progressDrawable="@drawable/progress_bar_gold" />
+
+			<TextView
+				android:id="@+id/textview1"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="10dp"
+				android:text="Loading Sect Data... 0%"
+				android:textSize="13sp"
+				android:textColor="#FFFFFF"
+				android:shadowColor="#00E5FF"
+				android:shadowDx="0"
+				android:shadowDy="0"
+				android:shadowRadius="8"
+				android:fontFamily="sans-serif-medium" />
+		</LinearLayout>
+
+		<!-- Bottom Cultivator Wisdom / Gameplay Tips -->
+		<LinearLayout
+			android:id="@+id/layout_tip_container"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal"
+			android:gravity="center"
+			android:paddingStart="16dp"
+			android:paddingEnd="16dp"
+			android:paddingTop="8dp"
+			android:paddingBottom="8dp"
+			android:layout_marginBottom="16dp"
+			android:clickable="true"
+			android:focusable="true"
+			android:background="@drawable/bg_ripple_card">
+
+			<TextView
+				android:id="@+id/tv_tip"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Tip: Assign disciples to Alchemy to craft Spirit Pills"
+				android:textSize="11sp"
+				android:textColor="#D1C4E9"
+				android:gravity="center"
+				android:alpha="0.85"
+				android:fontFamily="serif" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+</FrameLayout>

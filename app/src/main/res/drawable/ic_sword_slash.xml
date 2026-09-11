@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer Glow -->
+    <path
+        android:fillColor="#4000E5FF"
+        android:pathData="M6,42 C14,32 26,18 42,6 C34,16 22,30 6,42 Z" />
+    <!-- Sharp Energy Blade Arc -->
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M8,40 C15,31 25,19 40,8 C33,17 23,29 8,40 Z" />
+    <!-- Core White Beam -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,38 C16,30 24,20 38,10 C32,18 24,28 10,38 Z" />
+</vector>

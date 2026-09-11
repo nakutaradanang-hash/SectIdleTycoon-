@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<full-backup-content>
+    <!-- Include local game database & shared preferences -->
+    <include domain="database" path="sect_idle_game.db" />
+    <include domain="sharedpref" path="sect_save_state.xml" />
+    <!-- Exclude volatile caches and sound temp files -->
+    <exclude domain="cache" />
+</full-backup-content>

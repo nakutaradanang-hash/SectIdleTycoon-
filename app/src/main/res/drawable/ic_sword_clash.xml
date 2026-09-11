@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Crossed immortal swords -->
+    <path
+        android:fillColor="#FFFFD700"
+        android:pathData="M8,8 L16,16 L12,20 L4,12 Z" />
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M16,16 L40,40 L42,38 L18,14 Z" />
+    <path
+        android:fillColor="#FFFFD700"
+        android:pathData="M40,8 L32,16 L36,20 L44,12 Z" />
+    <path
+        android:fillColor="#FF00E5FF"
+        android:pathData="M32,16 L8,40 L6,38 L30,14 Z" />
+    <path
+        android:fillColor="#FFFF5252"
+        android:pathData="M24,20 L28,24 L24,28 L20,24 Z" />
+</vector>

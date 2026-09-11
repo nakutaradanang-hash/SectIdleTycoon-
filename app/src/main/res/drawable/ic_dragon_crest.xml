@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Golden Celestial Dragon Crest -->
+    <path
+        android:fillColor="#FFFFD700"
+        android:pathData="M24,4 C14,4 6,12 6,22 C6,30 12,38 20,42 L24,44 L28,42 C36,38 42,30 42,22 C42,12 34,4 24,4 Z M24,10 C30,10 36,15 36,22 C36,28 32,34 24,38 C16,34 12,28 12,22 C12,15 18,10 24,10 Z" />
+    <path
+        android:fillColor="#FF00E5FF"
+        android:pathData="M24,16 L28,24 L24,32 L20,24 Z" />
+</vector>

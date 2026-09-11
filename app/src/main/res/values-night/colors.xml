@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="sect_night_surface">#0A0E1A</color>
+    <color name="sect_night_primary">#00E5FF</color>
+    <color name="sect_night_accent">#FFD700</color>
+    <color name="sect_night_card">#14192B</color>
+    <color name="sect_night_text">#F0F4F8</color>
+    <color name="sect_night_text_secondary">#94A3B8</color>
+</resources>

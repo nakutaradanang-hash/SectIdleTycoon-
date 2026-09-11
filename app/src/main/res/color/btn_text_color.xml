@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:color="#FFD700" /> <!-- Celestial Gold on Press -->
+    <item android:state_focused="true" android:color="#00E5FF" /> <!-- Cyan Glow on Focus -->
+    <item android:state_enabled="false" android:color="#66888888" /> <!-- Muted Disabled -->
+    <item android:color="#FFFFFF" /> <!-- Default Crisp White -->
+</selector>

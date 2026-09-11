@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_war_conquest"
+    android:padding="16dp"
+    android:layout_margin="12dp">
+
+    <!-- Header Title -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_dragon_crest"
+            android:contentDescription="Sect Crest" />
+
+        <TextView
+            android:id="@+id/tvWarTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:text="Sect War &amp; Territory Conquest"
+            android:textColor="#FFFF5252"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCloseWar"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="✕"
+            android:textColor="#FFFFFFFF"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFFF5252"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- War Overview & Rival Sect -->
+    <TextView
+        android:id="@+id/tvWarTarget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Rival Sect: Blood Demon Sect"
+        android:textColor="#FFFFD700"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvWarPowerStats"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:text="Our Sect Power: 3,450 | Rival Power: 2,800"
+        android:textColor="#FFFFFFFF"
+        android:textSize="12sp" />
+
+    <!-- Morale / Power Bar -->
+    <ProgressBar
+        android:id="@+id/pbWarMorale"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:layout_marginTop="6dp"
+        android:max="100"
+        android:progress="60"
+        android:progressDrawable="@drawable/progress_war_morale" />
+
+    <!-- War Battlefield Feedback & Status Header -->
+    <TextView
+        android:id="@+id/tvWarStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Forces Assembled on the Border"
+        android:textColor="#FFFF5252"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <!-- Scrollable Battle Log Box for Round-by-Round Events -->
+    <FrameLayout
+        android:id="@+id/warBattlefieldBox"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="6dp"
+        android:background="#EE100205"
+        android:padding="6dp">
+
+        <ScrollView
+            android:id="@+id/svWarBattleLog"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            android:scrollbars="vertical">
+
+            <LinearLayout
+                android:id="@+id/llWarBattleLogs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvWarLog"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="Conquer rival sect territories to expand realm dominance and plunder divine spirit stones! Round-by-round events (Critical Strike, Damage Dealt, Status Effects) will appear here during combat."
+                    android:textColor="#FFAAAAAA"
+                    android:textSize="11sp" />
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+
+    <!-- Difficulty / Campaign Level -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnWarDiff1"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="Raid (1★)"
+            android:textColor="#FFFFFFFF"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnWarDiff2"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="Assault (2★)"
+            android:textColor="#FFFFFFFF"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+
+        <Button
+            android:id="@+id/btnWarDiff3"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:layout_marginStart="3dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="Total War (3★)"
+            android:textColor="#FFFFFFFF"
+            android:textSize="11sp"
+            android:clickable="true"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Action Launch Button -->
+    <Button
+        android:id="@+id/btnLaunchWar"
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/bg_crit_banner"
+        android:text="🔥 Launch Holy Sect Crusade"
+        android:textColor="#FFFFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:clickable="true"
+        android:focusable="true" />
+
+</LinearLayout>

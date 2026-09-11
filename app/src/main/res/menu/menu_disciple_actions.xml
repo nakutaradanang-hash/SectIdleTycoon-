@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_assign_mission"
+        android:title="Dispatch on Dao Quest" />
+    <item
+        android:id="@+id/action_bestow_pill"
+        android:title="Bestow Breakthrough Pill" />
+    <item
+        android:id="@+id/action_promote_elder"
+        android:title="Promote to Sect Elder" />
+    <item
+        android:id="@+id/action_expel_disciple"
+        android:title="Expel from Sect" />
+</menu>

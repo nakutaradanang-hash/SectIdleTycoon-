@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_tournament_card"
+    android:padding="20dp"
+    android:layout_margin="16dp">
+
+    <!-- Header Title with Icon -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_sword_clash"
+            android:contentDescription="Tournament Swords" />
+
+        <TextView
+            android:id="@+id/tvTournamentTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="12dp"
+            android:text="Grand Martial Tournament"
+            android:textColor="#FFFFD700"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCloseTournament"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="✕"
+            android:textColor="#FFFFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FF00E5FF"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Disciple Fighter Information -->
+    <TextView
+        android:id="@+id/tvTournamentDisciple"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Challenger: Elder Disciple Lin (Combat Power: 1,240)"
+        android:textColor="#FFFFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvTournamentTierInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Tier: Bronze Division (Best of 3 Rounds)"
+        android:textColor="#FFB0BEC5"
+        android:textSize="12sp" />
+
+    <!-- Duel Animation Visualizer Box -->
+    <FrameLayout
+        android:id="@+id/tournamentArenaBox"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginTop="12dp"
+        android:background="#CC050E1A"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tvTournamentStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ready for Grand Duel"
+                android:textColor="#FFFFD700"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTournamentRoundLog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:gravity="center"
+                android:text="Select difficulty tier and enter the martial arena!"
+                android:textColor="#FF00E5FF"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Difficulty / Tier Selector Row -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="14dp"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnTier1"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="Tier I"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnTier2"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="Tier II"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/btnTier3"
+            android:layout_width="0dp"
+            android:layout_height="42dp"
+            android:layout_weight="1"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/bg_button_jade"
+            android:text="Tier III"
+            android:textColor="#FFFFFFFF"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Action Button -->
+    <Button
+        android:id="@+id/btnStartTournament"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/bg_crit_banner"
+        android:text="⚔️ Enter Tournament Duel"
+        android:textColor="#FFFFFFFF"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

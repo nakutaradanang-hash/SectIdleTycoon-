@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Glowing Yin Yang / Pagoda Emblem -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M54,18 L58,26 L66,28 L60,34 L62,42 L54,37 L46,42 L48,34 L42,28 L50,26 Z" />
+    <path
+        android:fillColor="#00E5FF"
+        android:pathData="M54,34 C42.95,34 34,42.95 34,54 C34,65.05 42.95,74 54,74 C65.05,74 74,65.05 74,54 C74,42.95 65.05,34 54,34 Z M54,40 C61.73,40 68,46.27 68,54 C68,61.73 61.73,68 54,68 C46.27,68 40,61.73 40,54 C40,46.27 46.27,40 54,40 Z" />
+    <!-- Sword Blade / Qi Column -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M52,24 L56,24 L56,76 L54,84 L52,76 Z" />
+    <!-- Sword Guard -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M44,70 L64,70 L64,74 L44,74 Z" />
+    <!-- Cloud Waves -->
+    <path
+        android:fillColor="#80B388FF"
+        android:pathData="M30,84 C35,80 45,80 50,84 C55,80 65,80 70,84 C75,80 80,82 82,86 L26,86 C28,84 29,84 30,84 Z" />
+</vector>

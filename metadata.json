@@ -1,0 +1,6 @@
+{
+  "name": "Idle Sect",
+  "description": "Idle cultivation sect simulation RPG with real-time world canvas, disciple management, battles, and Gemini AI grandmaster.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_cultivation_manual"
+        android:title="Dao Scripture Manual"
+        android:icon="@drawable/ic_dragon_crest"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_audio_toggle"
+        android:title="Toggle Immortal BGM"
+        android:icon="@android:drawable/ic_lock_silent_mode_off"
+        android:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_save_game"
+        android:title="Manual Cloud Save"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings &amp; Performance"
+        android:showAsAction="never" />
+    <item
+        android:id="@+id/action_exit_title"
+        android:title="Exit to Title"
+        android:showAsAction="never" />
+</menu>

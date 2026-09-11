@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Clean, high-legibility sans-serif with cultivation calligraphic aesthetic fallback -->
+    <font
+        app:fontStyle="normal"
+        app:fontWeight="400"
+        app:fontProviderAuthority="com.google.android.gms.fonts"
+        app:fontProviderPackage="com.google.android.gms"
+        app:fontProviderQuery="Cinzel Decorative"
+        app:fontProviderCerts="@null" />
+</font-family>

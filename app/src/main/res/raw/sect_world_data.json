@@ -1,0 +1,36 @@
+{
+  "version": "2.4.0",
+  "world": {
+    "name": "Azure Cloud Realm",
+    "lore": "An ancient cultivation sanctuary where Qi condenses like morning dew upon celestial jade peaks.",
+    "realms": [
+      { "id": "qi_condensing", "name": "Qi Condensation", "tier": 1, "maxLevel": 9, "baseQiRate": 5.0 },
+      { "id": "foundation_est", "name": "Foundation Establishment", "tier": 2, "maxLevel": 9, "baseQiRate": 25.0 },
+      { "id": "core_formation", "name": "Core Formation", "tier": 3, "maxLevel": 9, "baseQiRate": 120.0 },
+      { "id": "nascent_soul", "name": "Nascent Soul", "tier": 4, "maxLevel": 9, "baseQiRate": 600.0 },
+      { "id": "soul_formation", "name": "Soul Formation", "tier": 5, "maxLevel": 9, "baseQiRate": 3000.0 },
+      { "id": "void_refining", "name": "Void Refining", "tier": 6, "maxLevel": 9, "baseQiRate": 15000.0 },
+      { "id": "body_integration", "name": "Body Integration", "tier": 7, "maxLevel": 9, "baseQiRate": 80000.0 },
+      { "id": "great_ascension", "name": "Great Ascension", "tier": 8, "maxLevel": 9, "baseQiRate": 500000.0 },
+      { "id": "immortal_tribulation", "name": "Immortal Tribulation", "tier": 9, "maxLevel": 9, "baseQiRate": 3000000.0 }
+    ],
+    "buildings": [
+      { "id": "main_hall", "name": "Main Palace", "baseCost": 100, "multiplier": 1.25, "benefit": "Increases Max Disciples & Prestige" },
+      { "id": "spirit_field", "name": "Herb Garden", "baseCost": 50, "multiplier": 1.20, "benefit": "Harvests Spirit Herbs for Alchemy" },
+      { "id": "alchemy_furnace", "name": "Alchemy Cauldron", "baseCost": 200, "multiplier": 1.30, "benefit": "Refines Spirit Gathering & Breakthrough Pills" },
+      { "id": "scripture_pavilion", "name": "Scripture Library", "baseCost": 150, "multiplier": 1.22, "benefit": "Unlocks Ancient Dao Techniques" },
+      { "id": "training_grounds", "name": "Martial Arena", "baseCost": 120, "multiplier": 1.20, "benefit": "Accelerates Combat & Sword Mastery" },
+      { "id": "spirit_mine", "name": "Spirit Stone Vein", "baseCost": 80, "multiplier": 1.18, "benefit": "Passive Spirit Stone Income" }
+    ],
+    "soundtrack": [
+      { "id": "bgm_sect_peace", "title": "Sanctuary of the Jade Mountain", "res": "raw/bgm_sect_peace.wav" },
+      { "id": "bgm_immortal_hymn", "title": "Beneath the Golden Mist", "res": "raw/bgm_immortal_hymn.wav" },
+      { "id": "bgm_demon_tribulation", "title": "Abyssal Demonic Tribulation", "res": "raw/bgm_demon_tribulation.wav" },
+      { "id": "bgm_combat_epic", "title": "Sword Clash of the Five Sects", "res": "raw/bgm_combat_epic.wav" },
+      { "id": "bgm_meditation_serene", "title": "432Hz Dao Chamber Resonance", "res": "raw/bgm_meditation_serene.wav" },
+      { "id": "bgm_wilderness_explore", "title": "Echoes of the Ancient Immortal Cave", "res": "raw/bgm_wilderness_explore.wav" },
+      { "id": "bgm_sect_triumph", "title": "Grand Immortal Tournament Gathering", "res": "raw/bgm_sect_triumph.wav" },
+      { "id": "bgm_boss_clash", "title": "Heavenly Tribulation Demon Sovereign", "res": "raw/bgm_boss_clash.wav" }
+    ]
+  }
+}

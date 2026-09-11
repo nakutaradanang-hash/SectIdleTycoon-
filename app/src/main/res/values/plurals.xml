@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="disciples_count">
+        <item quantity="one">%d Disciple</item>
+        <item quantity="other">%d Disciples</item>
+    </plurals>
+    <plurals name="spirit_stones_count">
+        <item quantity="one">%d Spirit Stone</item>
+        <item quantity="other">%d Spirit Stones</item>
+    </plurals>
+    <plurals name="pills_refined">
+        <item quantity="one">%d Breakthrough Pill</item>
+        <item quantity="other">%d Breakthrough Pills</item>
+    </plurals>
+    <plurals name="cultivation_years">
+        <item quantity="one">%d Year of Dao Practice</item>
+        <item quantity="other">%d Years of Dao Practice</item>
+    </plurals>
+</resources>

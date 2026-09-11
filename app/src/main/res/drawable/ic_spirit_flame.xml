@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <!-- Outer Qi Flame Aura -->
+    <path
+        android:fillColor="#FFD700"
+        android:pathData="M24,4 C24,4 32,16 32,26 C32,34.8 28.4,38 24,44 C19.6,38 16,34.8 16,26 C16,16 24,4 24,4 Z" />
+    <!-- Inner Core Fire -->
+    <path
+        android:fillColor="#FF3D00"
+        android:pathData="M24,14 C24,14 29,22 29,28 C29,33.5 26.8,36 24,40 C21.2,36 19,33.5 19,28 C19,22 24,14 24,14 Z" />
+    <!-- Pure Celestial White Heart -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M24,24 C24,24 26.5,28 26.5,31 C26.5,34 25.3,35 24,37 C22.7,35 21.5,34 21.5,31 C21.5,28 24,24 24,24 Z" />
+</vector>
