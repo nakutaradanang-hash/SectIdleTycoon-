@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">Sekte Kultivasi</string>
+    <string name="app_title">SEKTE KULTIVASI</string>
+    <string name="app_subtitle">Jalan Keabadian · THE IMMORTAL PATH</string>
+    <string name="loading_sect_data">Memuat Data Sekte… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ Kondensasi Qi (炼气期) · Mengumpulkan Esensi Langit &amp; Bumi ✦</string>
+    <string name="splash_stage_2">✦ Pembentukan Fondasi (筑基期) · Membuka Titik Meridian ✦</string>
+    <string name="splash_stage_3">✦ Pembentukan Inti Emas (金丹期) · Memurnikan Urat Naga Sekte ✦</string>
+    <string name="splash_stage_4">✦ Jiwa Baru / Nascent Soul (元婴期) · Menyelaraskan Hukum Dao ✦</string>
+    <string name="splash_stage_5">✦ Kenaikan Abadi (飞升成仙) · Gerbang Sekte Terbuka! ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">Fana (Mortal)</string>
+    <string name="realm_qi_condensation">Kondensasi Qi (炼气期)</string>
+    <string name="realm_foundation_establishment">Pembentukan Fondasi (筑基期)</string>
+    <string name="realm_core_formation">Inti Emas (金丹期)</string>
+    <string name="realm_nascent_soul">Jiwa Baru / Nascent Soul (元婴期)</string>
+    <string name="realm_soul_transformation">Transformasi Jiwa (化神期)</string>
+    <string name="realm_void_refinement">Pemurnian Hampa (炼虚期)</string>
+    <string name="realm_body_integration">Integrasi Tubuh (合体期)</string>
+    <string name="realm_tribulation_transcendence">Transendensi Kesengsaraan (渡劫期)</string>
+    <string name="realm_true_immortal">Abadi Sejati (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">Tahap Awal</string>
+    <string name="stage_mid">Tahap Menengah</string>
+    <string name="stage_late">Tahap Akhir</string>
+    <string name="stage_peak">Lingkaran Puncak</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">Kandidat Fana</string>
+    <string name="rank_outer_disciple">Murid Luar</string>
+    <string name="rank_inner_disciple">Murid Dalam</string>
+    <string name="rank_core_disciple">Murid Inti</string>
+    <string name="rank_hall_elder">Tetua Balai</string>
+    <string name="rank_grand_elder">Tetua Agung</string>
+    <string name="rank_sect_master">Pemimpin Sekte</string>
+    <string name="rank_supreme_ancestor">Leluhur Tertinggi</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">Siaga</string>
+    <string name="state_resting">Istirahat &amp; Pemulihan</string>
+    <string name="state_eating">Santap Makanan Roh</string>
+    <string name="state_cultivating">Meditasi &amp; Kultivasi</string>
+    <string name="state_sect_duty">Menjalankan Tugas Sekte</string>
+    <string name="state_breakthrough">Menerobos Batas Ranah</string>
+    <string name="state_tribulation">Menghadapi Kesengsaraan Petir Langit</string>
+    <string name="state_qi_deviation">Penyimpangan Qi (Serangan Iblis Batin)</string>
+    <string name="state_injured">Luka Parah</string>
+    <string name="state_ascended">Mencapai Kenaikan Abadi</string>
+    <string name="state_deceased">Gugur &amp; Kembali ke Samsara</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">Kenyang / Makanan Roh</string>
+    <string name="attr_energy">Energi Fisik</string>
+    <string name="attr_mood">Suasana Hati &amp; Kewarasan</string>
+    <string name="attr_health">Kesehatan Fisik</string>
+    <string name="attr_qi_satiety">Kepadatan Qi Spiritual</string>
+    <string name="attr_comfort">Kenyamanan Tempat Tinggal</string>
+    <string name="attr_dao_heart">Kestabilan Hati Dao</string>
+    <string name="attr_talent">Tingkat Bakat</string>
+    <string name="attr_age">Usia</string>
+    <string name="attr_lifespan">Umur Maksimal</string>
+    <string name="attr_elemental_affinity">Afinitas Akar Spiritual</string>
+
+    <!-- Elements -->
+    <string name="element_metal">Emas / Logam (金)</string>
+    <string name="element_wood">Kayu (木)</string>
+    <string name="element_water">Air (水)</string>
+    <string name="element_fire">Api (火)</string>
+    <string name="element_earth">Tanah (土)</string>
+    <string name="element_wind">Angin (风)</string>
+    <string name="element_lightning">Petir (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">Balai Utama Sekte</string>
+    <string name="bld_alchemy_pavilion">Paviliun Alkimia</string>
+    <string name="bld_herb_garden">Kebun Tanaman Roh</string>
+    <string name="bld_forging_chamber">Ruang Penempaan Artefak</string>
+    <string name="bld_spirit_mine">Tambang Batu Roh</string>
+    <string name="bld_meditation_cave">Gua Meditasi Tenang</string>
+    <string name="bld_scripture_library">Paviliun Kitab Pusaka</string>
+    <string name="bld_dining_hall">Ruang Makan Sekte</string>
+    <string name="bld_dormitory">Asrama Murid</string>
+    <string name="bld_tribulation_platform">Altar Kesengsaraan</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">Batu Roh</string>
+    <string name="res_spirit_qi">Qi Spiritual</string>
+    <string name="res_herbs">Tanaman Roh</string>
+    <string name="res_ores">Bijih Abadi</string>
+    <string name="res_spirit_pills">Pil Kultivasi</string>
+    <string name="res_contribution">Kontribusi Sekte</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">Konfirmasi</string>
+    <string name="btn_cancel">Batal</string>
+    <string name="btn_close">Tutup</string>
+    <string name="btn_recruit">Rekrut Murid</string>
+    <string name="btn_assign">Tugaskan Pekerjaan</string>
+    <string name="btn_upgrade">Tingkatkan Fasilitas</string>
+    <string name="btn_breakthrough">Coba Terobosan</string>
+    <string name="btn_feed">Beri Makanan Roh</string>
+    <string name="btn_rest">Istirahatkan</string>
+    <string name="btn_heal">Sembuhkan Luka</string>
+    <string name="btn_cultivate">Masuk Pertapaan</string>
+    <string name="btn_trade">Perniagaan Pasar</string>
+    <string name="btn_battle">Mulai Pertempuran</string>
+    <string name="btn_settings">Pengaturan</string>
+    <string name="btn_save">Simpan Progres</string>
+    <string name="btn_language">Bahasa / Language</string>
+    <string name="btn_stats">Statistik Sekte</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">Pilih Bahasa</string>
+    <string name="lang_en">Inggris (English)</string>
+    <string name="lang_ja">Jepang (日本語)</string>
+    <string name="lang_ko">Korea (한국어)</string>
+    <string name="lang_zh">Mandarin (简体中文)</string>
+    <string name="lang_id">Indonesia (Bahasa Indonesia)</string>
+    <string name="lang_ar">Arab (العربية)</string>
+    <string name="lang_es">Spanyol (Español)</string>
+    <string name="lang_pt">Portugis (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">Petunjuk: Tempatkan murid di Paviliun Alkimia untuk meracik pil penerobos ranah.</string>
+    <string name="tip_2">Petunjuk: Kestabilan Hati Dao yang tinggi sangat mengurangi risiko Penyimpangan Qi.</string>
+    <string name="tip_3">Petunjuk: Murid yang berkultivasi sesuai elemen akar spiritual berlatih 50% lebih cepat.</string>
+    <string name="tip_4">Petunjuk: Tingkatkan asrama murid untuk mempercepat pemulihan energi fisik.</string>
+    <string name="tip_5">Petunjuk: Makanan Roh di Ruang Makan memulihkan lapar dan menaikkan suasana hati.</string>
+    <string name="tip_6">Petunjuk: Siapkan artefak pelindung sebelum menghadapi Kesengsaraan Petir Langit.</string>
+    <string name="tip_7">Petunjuk: Murid Inti dapat membimbing murid luar untuk mempercepat pembentukan fondasi.</string>
+    <string name="tip_8">Petunjuk: Jual kelebihan bijih mineral di pasar untuk membeli tanaman obat langka.</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">Pertempuran Sekte</string>
+    <string name="combat_victory">Kemenangan Gemilang!</string>
+    <string name="combat_defeat">Sekte Kalah</string>
+    <string name="combat_retreat">Mundur Taktis</string>
+    <string name="combat_round">Ronde %1$d</string>
+    <string name="combat_hp">HP: %1$d / %2$d</string>
+    <string name="combat_mp">Qi: %1$d / %2$d</string>
+    <string name="combat_atk">Serangan: %1$d</string>
+    <string name="combat_def">Pertahanan: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">Penerimaan Murid Baru</string>
+    <string name="dialog_recruit_desc">Mencari manusia fana dengan bakat akar spiritual luar biasa di gerbang gunung.</string>
+    <string name="dialog_disciple_detail_title">Catatan Kultivasi Murid</string>
+    <string name="dialog_assign_title">Tugaskan Tugas Sekte</string>
+    <string name="dialog_settings_title">Pengaturan Game</string>
+    <string name="dialog_music_volume">Volume Musik</string>
+    <string name="dialog_sfx_volume">Efek Suara</string>
+    <string name="dialog_haptic_feedback">Getaran Sentuh</string>
+</resources>

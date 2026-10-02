@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">طائفة الخلود</string>
+    <string name="app_title">طائفة الخلود</string>
+    <string name="app_subtitle">طريق الخلود · THE IMMORTAL PATH</string>
+    <string name="loading_sect_data">جارٍ تحميل بيانات الطائفة… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ تكثيف التشي (炼气期) · جمع طاقة السماء والأرض ✦</string>
+    <string name="splash_stage_2">✦ تأسيس القاعدة (筑基期) · فتح مسارات الطاقة ✦</string>
+    <string name="splash_stage_3">✦ تكوين النواة الذهبية (金丹期) · تكرير عروق التنين ✦</string>
+    <string name="splash_stage_4">✦ الروح الوليدة (元婴期) · مواءمة قوانين الداو ✦</string>
+    <string name="splash_stage_5">✦ الصعود الخالد (飞升成仙) · بوابات الطائفة تفتح! ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">فاني (Mortal)</string>
+    <string name="realm_qi_condensation">تكثيف التشي (炼气期)</string>
+    <string name="realm_foundation_establishment">تأسيس القاعدة (筑基期)</string>
+    <string name="realm_core_formation">النواة الذهبية (金丹期)</string>
+    <string name="realm_nascent_soul">الروح الوليدة (元婴期)</string>
+    <string name="realm_soul_transformation">تحول الروح (化神期)</string>
+    <string name="realm_void_refinement">تكرير الفراغ (炼虚期)</string>
+    <string name="realm_body_integration">تكامل الجسد (合体期)</string>
+    <string name="realm_tribulation_transcendence">تجاوز المحنة السماوية (渡劫期)</string>
+    <string name="realm_true_immortal">الخالد الحقيقي (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">المرحلة المبكرة</string>
+    <string name="stage_mid">المرحلة المتوسطة</string>
+    <string name="stage_late">المرحلة المتأخرة</string>
+    <string name="stage_peak">دائرة الذروة</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">طامح فاني</string>
+    <string name="rank_outer_disciple">تلميذ خارجي</string>
+    <string name="rank_inner_disciple">تلميذ داخلي</string>
+    <string name="rank_core_disciple">تلميذ جوهري</string>
+    <string name="rank_hall_elder">شيخ القاعة</string>
+    <string name="rank_grand_elder">الشيخ الأكبر</string>
+    <string name="rank_sect_master">سيد الطائفة</string>
+    <string name="rank_supreme_ancestor">السلف الأعلى</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">في وضع الاستعداد</string>
+    <string name="state_resting">استراحة وتعافي</string>
+    <string name="state_eating">تناول الطعام الروحي</string>
+    <string name="state_cultivating">تأمل واستنارة</string>
+    <string name="state_sect_duty">أداء واجب الطائفة</string>
+    <string name="state_breakthrough">محاولة اختراق النطاق</string>
+    <string name="state_tribulation">مواجهة صاعقة السماء</string>
+    <string name="state_qi_deviation">انحراف التشي (هجوم الشياطين الداخلية)</string>
+    <string name="state_injured">إصابة بليغة</string>
+    <string name="state_ascended">صعد إلى عالم الخلود</string>
+    <string name="state_deceased">سقط وعاد إلى دورة التناسخ</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">الشبع / الغذاء الروحي</string>
+    <string name="attr_energy">الطاقة الجسدية</string>
+    <string name="attr_mood">المزاج والصفاء</string>
+    <string name="attr_health">الصحة الجسدية</string>
+    <string name="attr_qi_satiety">كثافة التشي الروحي</string>
+    <string name="attr_comfort">راحة الإقامة</string>
+    <string name="attr_dao_heart">استقرار قلب الداو</string>
+    <string name="attr_talent">درجة الموهبة</string>
+    <string name="attr_age">العمر</string>
+    <string name="attr_lifespan">العمر الأقصى</string>
+    <string name="attr_elemental_affinity">ألفة الجذور الروحية</string>
+
+    <!-- Elements -->
+    <string name="element_metal">المعدن / الذهب (金)</string>
+    <string name="element_wood">الخشب (木)</string>
+    <string name="element_water">الماء (水)</string>
+    <string name="element_fire">النار (火)</string>
+    <string name="element_earth">الأرض (土)</string>
+    <string name="element_wind">الرياح (风)</string>
+    <string name="element_lightning">البرق (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">قاعة الطائفة الكبرى</string>
+    <string name="bld_alchemy_pavilion">جناح الخيمياء</string>
+    <string name="bld_herb_garden">حديقة الأعشاب الروحية</string>
+    <string name="bld_forging_chamber">غرفة صياغة القطع الأثرية</string>
+    <string name="bld_spirit_mine">منجم أحجار الروح</string>
+    <string name="bld_meditation_cave">كهف التأمل الهادئ</string>
+    <string name="bld_scripture_library">جناح الكتب المقدسة</string>
+    <string name="bld_dining_hall">قاعة الطعام الروحي</string>
+    <string name="bld_dormitory">مساكن التلاميذ</string>
+    <string name="bld_tribulation_platform">مذبح المحنة السماوية</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">أحجار الروح</string>
+    <string name="res_spirit_qi">طاقة التشي</string>
+    <string name="res_herbs">أعشاب روحية</string>
+    <string name="res_ores">خامات خالدة</string>
+    <string name="res_spirit_pills">حبوب الزراعة</string>
+    <string name="res_contribution">مساهمة الطائفة</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">تأكيد</string>
+    <string name="btn_cancel">إلغاء</string>
+    <string name="btn_close">إغلاق</string>
+    <string name="btn_recruit">تجنيد التلاميذ</string>
+    <string name="btn_assign">تعيين واجب</string>
+    <string name="btn_upgrade">ترقية المنشأة</string>
+    <string name="btn_breakthrough">محاولة الاختراق</string>
+    <string name="btn_feed">إطعام طعام روحي</string>
+    <string name="btn_rest">إرسال للراحة</string>
+    <string name="btn_heal">علاج الجراح</string>
+    <string name="btn_cultivate">دخول العزلة</string>
+    <string name="btn_trade">تجارة السوق</string>
+    <string name="btn_battle">خوض المعركة</string>
+    <string name="btn_settings">الإعدادات</string>
+    <string name="btn_save">حفظ التقدم</string>
+    <string name="btn_language">اللغة / Language</string>
+    <string name="btn_stats">إحصائيات الطائفة</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">اختر اللغة</string>
+    <string name="lang_en">الإنجليزية (English)</string>
+    <string name="lang_ja">اليابانية (日本語)</string>
+    <string name="lang_ko">الكورية (한국어)</string>
+    <string name="lang_zh">الصينية (简体中文)</string>
+    <string name="lang_id">الإندونيسية (Bahasa Indonesia)</string>
+    <string name="lang_ar">العربية (Arabic)</string>
+    <string name="lang_es">الإسبانية (Español)</string>
+    <string name="lang_pt">البرتغالية (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">نصيحة: عيّن تلاميذ في جناح الخيمياء لصناعة حبوب الاختراق الروحي.</string>
+    <string name="tip_2">نصيحة: استقرار قلب الداو العالي يقلل بشكل كبير من احتمالية انحراف التشي.</string>
+    <string name="tip_3">نصيحة: التلاميذ ذوو الجذور المتطابقة مع تقنياتهم يزرعون أسرع بنسبة 50%.</string>
+    <string name="tip_4">نصيحة: قم بترقية مساكن التلاميذ لتسريع استعادة الطاقة الجسدية.</string>
+    <string name="tip_5">نصيحة: الطعام الروحي في قاعة الطعام يشبع الجوع ويرفع المعنويات.</string>
+    <string name="tip_6">نصيحة: جهز القطع الأثرية الواقية قبل خوض غمار المحنة السماوية.</string>
+    <string name="tip_7">نصيحة: يمكن للتلاميذ الجوهريين توجيه التلاميذ الخارجيين لتسريع بناء الأساس.</string>
+    <string name="tip_8">نصيحة: بيع فائض المعادن في السوق لشراء مكونات سماوية نادرة.</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">معركة الخالدين</string>
+    <string name="combat_victory">نصر مؤزر!</string>
+    <string name="combat_defeat">هزيمة الطائفة</string>
+    <string name="combat_retreat">انسحاب تكتيكي</string>
+    <string name="combat_round">الجولة %1$d</string>
+    <string name="combat_hp">الصحة: %1$d / %2$d</string>
+    <string name="combat_mp">التشي: %1$d / %2$d</string>
+    <string name="combat_atk">الهجوم: %1$d</string>
+    <string name="combat_def">الدفاع: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">تجنيد المواهب</string>
+    <string name="dialog_recruit_desc">ابحث عن الفانين ذوي الجذور الروحية الاستثنائية عند بوابة الجبل.</string>
+    <string name="dialog_disciple_detail_title">سجل زراعة التلميذ</string>
+    <string name="dialog_assign_title">تكليف بواجب الطائفة</string>
+    <string name="dialog_settings_title">إعدادات اللعبة</string>
+    <string name="dialog_music_volume">مستوى صوت الموسيقى</string>
+    <string name="dialog_sfx_volume">المؤثرات الصوتية</string>
+    <string name="dialog_haptic_feedback">الاهتزاز اللمسي</string>
+</resources>

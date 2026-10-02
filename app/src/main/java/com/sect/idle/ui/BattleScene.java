@@ -628,4 +628,28 @@ public final class BattleScene {
         shakeIntensity = 0f;
         flashIntensity = 0f;
     }
+
+    public void destroy() {
+        if (scene3D != null) {
+            scene3D.destroy();
+        }
+        for (Bitmap bmp : unitSpriteCache.values()) {
+            if (bmp != null && !bmp.isRecycled()) {
+                bmp.recycle();
+            }
+        }
+        unitSpriteCache.clear();
+        if (atlas != null && !atlas.isRecycled()) {
+            atlas.recycle();
+            atlas = null;
+        }
+        if (battleSheet != null && !battleSheet.isRecycled()) {
+            battleSheet.recycle();
+            battleSheet = null;
+        }
+        if (effectSheet != null && !effectSheet.isRecycled()) {
+            effectSheet.recycle();
+            effectSheet = null;
+        }
+    }
 }

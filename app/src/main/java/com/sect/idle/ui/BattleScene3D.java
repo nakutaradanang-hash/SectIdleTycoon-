@@ -461,7 +461,7 @@ public final class BattleScene3D {
         }
 
         try {
-            AudioManager.getInstance(context).playSfx(AudioManager.SFX_LEVEL_UP);
+            AudioManager.getInstance(context).playSfx(AudioManager.SFX_BREAKTHROUGH);
         } catch (Throwable ignored) {}
     }
 
@@ -1146,5 +1146,19 @@ public final class BattleScene3D {
     public void triggerFlash(int color) {
         flashColor = color;
         flashIntensity = 0.7f;
+    }
+
+    public void destroy() {
+        if (heroBitmap != null && !heroBitmap.isRecycled()) {
+            heroBitmap.recycle();
+            heroBitmap = null;
+        }
+        for (Bitmap bmp : spriteCache.values()) {
+            if (bmp != null && !bmp.isRecycled()) {
+                bmp.recycle();
+            }
+        }
+        spriteCache.clear();
+        aiStates.clear();
     }
 }

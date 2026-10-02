@@ -344,6 +344,26 @@ public final class ExceptionManager {
         reportException(t, tag, message, LEVEL_ERROR);
     }
 
+    public static void logD(String tag, String message) {
+        get().reportException(null, tag, message, LEVEL_DEBUG);
+    }
+
+    public static void logI(String tag, String message) {
+        get().reportException(null, tag, message, LEVEL_INFO);
+    }
+
+    public static void logW(String tag, String message) {
+        get().reportException(null, tag, message, LEVEL_WARN);
+    }
+
+    public static void logE(String tag, String message) {
+        get().reportException(null, tag, message, LEVEL_ERROR);
+    }
+
+    public static void logE(String tag, String message, Throwable t) {
+        get().reportException(t, tag, message, LEVEL_ERROR);
+    }
+
     public void logOperationalEvent(String category, String eventName, String details) {
         String msg = eventName + (details != null && !details.isEmpty() ? " | " + details : "");
         reportException(null, category, msg, LEVEL_INFO);
@@ -596,9 +616,30 @@ public final class ExceptionManager {
     }
 
     public int getTotalLogs() { return totalLogCount.get(); }
+    public int getTotalLogCount() { return totalLogCount.get(); }
     public int getTotalWarnings() { return totalWarnCount.get(); }
     public int getTotalErrors() { return totalErrorCount.get(); }
     public int getTotalFatal() { return totalFatalCount.get(); }
+
+    public void clearBreadcrumbs() {
+        synchronized (breadcrumbLock) {
+            for (int i = 0; i < MAX_BREADCRUMBS; i++) {
+                breadcrumbBuffer[i] = null;
+                breadcrumbTimes[i] = 0;
+            }
+            breadcrumbHead = 0;
+            breadcrumbCount = 0;
+        }
+    }
+
+    public void clearThrottleCache() {
+        throttleMap.clear();
+    }
+
+    public String[] getRecentBreadcrumbs() {
+        ArrayList<String> list = getBreadcrumbs();
+        return list.toArray(new String[list.size()]);
+    }
 
     public void clearInMemoryLogs() {
         synchronized (logRingLock) {
@@ -859,5 +900,94 @@ public final class ExceptionManager {
         synchronized (queueSignal) {
             queueSignal.notifyAll();
         }
+    }
+
+    /**
+     * Executes a runnable block safely, capturing and logging any throwable without crashing.
+     */
+    public static boolean executeSafely(SafeRunnable block, String category, String actionDescription) {
+        if (block == null) return false;
+        try {
+            block.run();
+            return true;
+        } catch (Throwable t) {
+            get().reportException(t, category, "SafeRunnable failed: " + actionDescription, LEVEL_ERROR);
+            return false;
+        }
+    }
+
+    /**
+     * Executes a supplier block safely with fallback return value on failure.
+     */
+    public static <T> T executeSafely(SafeSupplier<T> block, T fallback, String category, String actionDescription) {
+        if (block == null) return fallback;
+        try {
+            return block.get();
+        } catch (Throwable t) {
+            get().reportException(t, category, "SafeSupplier failed: " + actionDescription, LEVEL_ERROR);
+            return fallback;
+        }
+    }
+
+    /**
+     * Records a performance latency anomaly with threshold warning.
+     */
+    public void logPerformanceLag(String component, long durationMs, long thresholdMs) {
+        if (durationMs > thresholdMs) {
+            String msg = "Performance lag in " + component + ": took " + durationMs + "ms (threshold: " + thresholdMs + "ms)";
+            reportException(null, component, msg, durationMs > (thresholdMs * 3) ? LEVEL_WARN : LEVEL_INFO);
+            addBreadcrumb("PERF", msg);
+        }
+    }
+
+    /**
+     * Records high memory pressure or garbage collection distress event.
+     */
+    public void logMemoryPressure(long usedMB, long maxMB, String context) {
+        float ratio = maxMB > 0 ? ((float) usedMB / maxMB) : 0f;
+        String msg = "Memory pressure in " + context + ": " + usedMB + "MB / " + maxMB + "MB (" + (int)(ratio * 100) + "%)";
+        reportException(null, "MEMORY", msg, ratio > 0.85f ? LEVEL_WARN : LEVEL_INFO);
+        addBreadcrumb("MEMORY", msg);
+    }
+
+    /**
+     * Records security event (tamper detection, invalid signatures, suspicious payloads).
+     */
+    public void logSecurityEvent(String eventType, String details, boolean suspicious) {
+        String msg = "Security Event [" + eventType + "]: " + details;
+        reportException(null, "SECURITY", msg, suspicious ? LEVEL_WARN : LEVEL_INFO);
+        addBreadcrumb("SECURITY", msg);
+    }
+
+    /**
+     * Standardized ErrorCode reporting with full contextual diagnostic telemetry.
+     */
+    public void reportError(ErrorCode code, Throwable throwable, String message, String context) {
+        if (code == null) {
+            code = ErrorCode.SYS_UNKNOWN;
+        }
+        String formattedMsg = "[" + code.name() + "] " + (message != null ? message : code.getDescription());
+        if (context != null && !context.isEmpty()) {
+            formattedMsg += " | Context: " + context;
+        }
+        formattedMsg += " | Recovery: " + code.getRecoverySuggestion();
+
+        reportException(throwable, code.getSubsystem(), formattedMsg, code.getDefaultSeverity());
+        addBreadcrumb(code.getSubsystem(), "ErrorCode " + code.getCode() + " (" + code.name() + ")");
+    }
+
+    /**
+     * Reports an ErrorCode without a throwable.
+     */
+    public void reportError(ErrorCode code, String context) {
+        reportError(code, null, null, context);
+    }
+
+    /**
+     * Logs a user action breadcrumb with state context for post-mortem analysis.
+     */
+    public void logUserAction(String action, String screen, String details) {
+        String entry = "Action: " + action + " @ " + screen + (details != null ? " [" + details + "]" : "");
+        addBreadcrumb("USER_ACTION", entry);
     }
 }

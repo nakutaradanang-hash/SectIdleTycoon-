@@ -57,6 +57,10 @@ public class BattleUnit {
             }
         }
     }
+
+    public BattleUnit(Disciple d, boolean isPlayer, int team) {
+        this(d, team);
+    }
     
     public void tickAction() {
         actionBar += Math.max(1, spd / 5);

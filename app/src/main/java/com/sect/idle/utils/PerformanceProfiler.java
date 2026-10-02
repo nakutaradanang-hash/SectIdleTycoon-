@@ -32,22 +32,38 @@ public final class PerformanceProfiler {
     private final Runtime runtime;
     private final StringBuilder sb;
 
+    private static long safeElapsedRealtime() {
+        try {
+            return SystemClock.elapsedRealtime();
+        } catch (Throwable t) {
+            return System.currentTimeMillis();
+        }
+    }
+
+    private static long safeElapsedRealtimeNanos() {
+        try {
+            return SystemClock.elapsedRealtimeNanos();
+        } catch (Throwable t) {
+            return System.nanoTime();
+        }
+    }
+
     public PerformanceProfiler() {
         frameTimes = new long[HISTORY_SIZE];
         frameStartTimes = new long[HISTORY_SIZE];
         frameIndex = 0;
         runtime = Runtime.getRuntime();
         sb = new StringBuilder(128);
-        lastAdjustTime = SystemClock.elapsedRealtime();
+        lastAdjustTime = safeElapsedRealtime();
         throttling = false;
     }
 
     public void beginFrame() {
-        frameStartTimes[frameIndex] = SystemClock.elapsedRealtimeNanos();
+        frameStartTimes[frameIndex] = safeElapsedRealtimeNanos();
     }
 
     public void endFrame() {
-        long now = SystemClock.elapsedRealtimeNanos();
+        long now = safeElapsedRealtimeNanos();
         long elapsed = now - frameStartTimes[frameIndex];
         if (elapsed < 0) elapsed = 0;
         frameTimes[frameIndex] = elapsed;
@@ -85,7 +101,7 @@ public final class PerformanceProfiler {
     }
 
     private void autoAdjustQuality() {
-        long now = SystemClock.elapsedRealtime();
+        long now = safeElapsedRealtime();
         if (now - lastAdjustTime < 10000) return;
         lastAdjustTime = now;
 

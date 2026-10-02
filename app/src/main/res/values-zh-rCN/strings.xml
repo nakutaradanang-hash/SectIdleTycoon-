@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">修仙门派</string>
+    <string name="app_title">修仙门派</string>
+    <string name="app_subtitle">修仙之路 · 问鼎苍穹</string>
+    <string name="loading_sect_data">加载宗门典籍… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ 炼气期 · 吐纳天地灵气 ✦</string>
+    <string name="splash_stage_2">✦ 筑基期 · 开辟周天经络 ✦</string>
+    <string name="splash_stage_3">✦ 金丹期 · 汇聚宗门龙脉 ✦</string>
+    <string name="splash_stage_4">✦ 元婴期 · 参悟大道天机 ✦</string>
+    <string name="splash_stage_5">✦ 飞升成仙 · 宗门大门开启！ ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">凡人</string>
+    <string name="realm_qi_condensation">炼气期</string>
+    <string name="realm_foundation_establishment">筑基期</string>
+    <string name="realm_core_formation">金丹期</string>
+    <string name="realm_nascent_soul">元婴期</string>
+    <string name="realm_soul_transformation">化神期</string>
+    <string name="realm_void_refinement">炼虚期</string>
+    <string name="realm_body_integration">合体期</string>
+    <string name="realm_tribulation_transcendence">渡劫期</string>
+    <string name="realm_true_immortal">真仙境</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">初期</string>
+    <string name="stage_mid">中期</string>
+    <string name="stage_late">后期</string>
+    <string name="stage_peak">大圆满</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">记名弟子</string>
+    <string name="rank_outer_disciple">外门弟子</string>
+    <string name="rank_inner_disciple">内门弟子</string>
+    <string name="rank_core_disciple">核心真传</string>
+    <string name="rank_hall_elder">堂口长老</string>
+    <string name="rank_grand_elder">传功大长老</string>
+    <string name="rank_sect_master">掌门宗主</string>
+    <string name="rank_supreme_ancestor">太上老祖</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">静候差遣</string>
+    <string name="state_resting">静养歇息</string>
+    <string name="state_eating">享用灵膳</string>
+    <string name="state_cultivating">闭关吐纳</string>
+    <string name="state_sect_duty">执行宗门执务</string>
+    <string name="state_breakthrough">冲击境界关卡</string>
+    <string name="state_tribulation">历经九天雷劫</string>
+    <string name="state_qi_deviation">走火入魔 (心魔反噬)</string>
+    <string name="state_injured">重伤疗养</string>
+    <string name="state_ascended">功德圆满·飞升仙界</string>
+    <string name="state_deceased">道消身死·重入轮回</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">灵膳饱腹</string>
+    <string name="attr_energy">肉身体力</string>
+    <string name="attr_mood">心境神智</string>
+    <string name="attr_health">肉身气血</string>
+    <string name="attr_qi_satiety">周身灵蕴</string>
+    <string name="attr_comfort">居所舒适</string>
+    <string name="attr_dao_heart">道心稳固度</string>
+    <string name="attr_talent">修仙根骨</string>
+    <string name="attr_age">年岁</string>
+    <string name="attr_lifespan">寿元</string>
+    <string name="attr_elemental_affinity">灵根属性</string>
+
+    <!-- Elements -->
+    <string name="element_metal">金灵根 (金)</string>
+    <string name="element_wood">木灵根 (木)</string>
+    <string name="element_water">水灵根 (水)</string>
+    <string name="element_fire">火灵根 (火)</string>
+    <string name="element_earth">土灵根 (土)</string>
+    <string name="element_wind">风灵根 (风)</string>
+    <string name="element_lightning">雷灵根 (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">宗门大殿</string>
+    <string name="bld_alchemy_pavilion">炼丹阁</string>
+    <string name="bld_herb_garden">灵药圃</string>
+    <string name="bld_forging_chamber">神兵炼器室</string>
+    <string name="bld_spirit_mine">灵石龙脉</string>
+    <string name="bld_meditation_cave">静心修炼洞府</string>
+    <string name="bld_scripture_library">藏经阁</string>
+    <string name="bld_dining_hall">灵膳堂</string>
+    <string name="bld_dormitory">弟子居所</string>
+    <string name="bld_tribulation_platform">渡劫法坛</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">下品灵石</string>
+    <string name="res_spirit_qi">天地灵气</string>
+    <string name="res_herbs">千年灵药</string>
+    <string name="res_ores">九幽玄铁</string>
+    <string name="res_spirit_pills">九转灵丹</string>
+    <string name="res_contribution">宗门贡献</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">确认</string>
+    <string name="btn_cancel">取消</string>
+    <string name="btn_close">关闭</string>
+    <string name="btn_recruit">招募弟子</string>
+    <string name="btn_assign">指派职务</string>
+    <string name="btn_upgrade">升级建筑</string>
+    <string name="btn_breakthrough">冲击突破</string>
+    <string name="btn_feed">赐予灵膳</string>
+    <string name="btn_rest">打坐调息</string>
+    <string name="btn_heal">服用疗伤丹</string>
+    <string name="btn_cultivate">闭关参悟</string>
+    <string name="btn_trade">坊市交易</string>
+    <string name="btn_battle">征伐仙门</string>
+    <string name="btn_settings">宗门设置</string>
+    <string name="btn_save">保存道业</string>
+    <string name="btn_language">切换语言</string>
+    <string name="btn_stats">宗门谱系</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">选择语言</string>
+    <string name="lang_en">英语 (English)</string>
+    <string name="lang_ja">日语 (日本語)</string>
+    <string name="lang_ko">韩语 (한국어)</string>
+    <string name="lang_zh">简体中文 (Chinese)</string>
+    <string name="lang_id">印尼语 (Bahasa Indonesia)</string>
+    <string name="lang_ar">阿拉伯语 (العربية)</string>
+    <string name="lang_es">西班牙语 (Español)</string>
+    <string name="lang_pt">葡萄牙语 (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">宗门提示：指派弟子前往炼丹阁可炼制各类突破境界的灵丹妙药。</string>
+    <string name="tip_2">宗门提示：道心稳固度越高，冲击大境界时走火入魔的概率越低。</string>
+    <string name="tip_3">宗门提示：修炼同属性功法的弟子，其吐纳灵气效率提升50%。</string>
+    <string name="tip_4">宗门提示：扩建弟子居所能大幅加快弟子体力恢复与心境安宁。</string>
+    <string name="tip_5">宗门提示：灵膳堂的佳肴能迅速饱腹并提升弟子修炼积极性。</string>
+    <string name="tip_6">宗门提示：渡劫前务必准备好防御法宝与护脉丹药，以抗衡九重天雷。</string>
+    <string name="tip_7">宗门提示：核心真传弟子可传道授业，协助外门弟子顺利筑基。</string>
+    <string name="tip_8">宗门提示：在坊市出售多余玄铁矿石，可换购稀缺天地奇珍。</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">仙门争锋</string>
+    <string name="combat_victory">大获全胜！</string>
+    <string name="combat_defeat">宗门失利</string>
+    <string name="combat_retreat">保全撤退</string>
+    <string name="combat_round">第 %1$d 回合</string>
+    <string name="combat_hp">气血: %1$d / %2$d</string>
+    <string name="combat_mp">灵力: %1$d / %2$d</string>
+    <string name="combat_atk">攻击: %1$d</string>
+    <string name="combat_def">防御: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">开山纳徒</string>
+    <string name="dialog_recruit_desc">在山门寻访拥有天灵根与绝佳道骨的凡俗英才。</string>
+    <string name="dialog_disciple_detail_title">弟子修真录</string>
+    <string name="dialog_assign_title">宗门差遣</string>
+    <string name="dialog_settings_title">宗门秘阁设置</string>
+    <string name="dialog_music_volume">仙乐音量</string>
+    <string name="dialog_sfx_volume">术法音效</string>
+    <string name="dialog_haptic_feedback">震动反馈</string>
+</resources>

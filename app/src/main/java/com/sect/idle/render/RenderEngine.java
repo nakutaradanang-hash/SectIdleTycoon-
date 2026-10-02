@@ -352,7 +352,13 @@ public final class RenderEngine {
         canvas.drawText(sb.toString(), x, y, debugPaint); y += lineH;
 
         sb.setLength(0);
-        sb.append("FrameMs: ").append(String.format(java.util.Locale.US, "%.2f", statFrameTimeMs));
+        sb.append("FrameMs: ");
+        int whole = (int) statFrameTimeMs;
+        int frac = (int) ((statFrameTimeMs - whole) * 100);
+        if (frac < 0) frac = 0;
+        sb.append(whole).append('.');
+        if (frac < 10) sb.append('0');
+        sb.append(frac);
         canvas.drawText(sb.toString(), x, y, debugPaint); y += lineH;
 
         String memInfo = getMemoryInfo();

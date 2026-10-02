@@ -298,4 +298,16 @@ public final class SceneManager {
     public MenuScene getMenuScene() { return menuScene; }
     public boolean isTransitioning() { return transitioning; }
     public float getRenderTime() { return renderTime; }
+
+    public void destroy() {
+        if (sectScene != null) {
+            sectScene.destroy();
+        }
+        if (battleScene != null) {
+            battleScene.destroy();
+        }
+        if (menuScene != null) {
+            menuScene.destroy();
+        }
+    }
 }

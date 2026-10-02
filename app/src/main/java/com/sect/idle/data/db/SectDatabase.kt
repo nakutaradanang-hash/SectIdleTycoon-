@@ -6,10 +6,12 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.sect.idle.data.db.daos.BuildingDao
 import com.sect.idle.data.db.daos.DiscipleDao
+import com.sect.idle.data.db.daos.DiscipleLifecycleDao
 import com.sect.idle.data.db.daos.MapProgressDao
 import com.sect.idle.data.db.daos.SectDao
 import com.sect.idle.data.db.entities.BuildingEntity
 import com.sect.idle.data.db.entities.DiscipleEntity
+import com.sect.idle.data.db.entities.DiscipleLifecycleEntity
 import com.sect.idle.data.db.entities.MapProgressEntity
 import com.sect.idle.data.db.entities.SectEntity
 
@@ -21,6 +23,7 @@ import com.sect.idle.data.db.entities.SectEntity
     entities = [
         SectEntity::class,
         DiscipleEntity::class,
+        DiscipleLifecycleEntity::class,
         MapProgressEntity::class,
         BuildingEntity::class
     ],
@@ -31,6 +34,7 @@ abstract class SectDatabase : RoomDatabase() {
 
     abstract fun sectDao(): SectDao
     abstract fun discipleDao(): DiscipleDao
+    abstract fun discipleLifecycleDao(): DiscipleLifecycleDao
     abstract fun mapProgressDao(): MapProgressDao
     abstract fun buildingDao(): BuildingDao
 

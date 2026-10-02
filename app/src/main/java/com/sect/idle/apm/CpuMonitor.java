@@ -19,6 +19,14 @@ public final class CpuMonitor {
     private float systemCpuUsage = 0f;
     private int availableProcessors = 1;
 
+    private static long safeElapsedRealtime() {
+        try {
+            return SystemClock.elapsedRealtime();
+        } catch (Throwable t) {
+            return System.currentTimeMillis();
+        }
+    }
+
     public CpuMonitor() {
         try {
             availableProcessors = Math.max(1, Runtime.getRuntime().availableProcessors());
@@ -27,7 +35,7 @@ public final class CpuMonitor {
     }
 
     public synchronized void sample() {
-        long now = SystemClock.elapsedRealtime();
+        long now = safeElapsedRealtime();
         if (now - lastSampleTime < 500 && lastSampleTime != 0) {
             return; // Sample at most twice per second
         }
@@ -120,6 +128,10 @@ public final class CpuMonitor {
     }
 
     public float getProcessCpuUsage() {
+        return processCpuUsage;
+    }
+
+    public float getCpuUsagePercent() {
         return processCpuUsage;
     }
 

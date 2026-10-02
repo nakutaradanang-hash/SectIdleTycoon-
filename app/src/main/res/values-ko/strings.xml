@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">방치문파</string>
+    <string name="app_title">방치문파</string>
+    <string name="app_subtitle">수선지로 · 불멸의 길</string>
+    <string name="loading_sect_data">문파 데이터 로딩 중… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ 연기기 (煉氣期) · 천지 영기를 모으는 중 ✦</string>
+    <string name="splash_stage_2">✦ 축기기 (筑基期) · 경락을 개통하는 중 ✦</string>
+    <string name="splash_stage_3">✦ 금단기 (金丹期) · 문파 용맥 영력을 응축 중 ✦</string>
+    <string name="splash_stage_4">✦ 원영기 (元嬰期) · 도법 천도를 조화롭게 융합 중 ✦</string>
+    <string name="splash_stage_5">✦ 비승성선 (飛升成仙) · 문파 산문이 열립니다! ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">범인 (凡人)</string>
+    <string name="realm_qi_condensation">연기기 (煉氣期)</string>
+    <string name="realm_foundation_establishment">축기기 (筑基期)</string>
+    <string name="realm_core_formation">금단기 (金丹期)</string>
+    <string name="realm_nascent_soul">원영기 (元嬰期)</string>
+    <string name="realm_soul_transformation">화신기 (化神期)</string>
+    <string name="realm_void_refinement">연허기 (煉虛期)</string>
+    <string name="realm_body_integration">합체기 (合體期)</string>
+    <string name="realm_tribulation_transcendence">도겁기 (渡劫期)</string>
+    <string name="realm_true_immortal">진선경 (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">초기</string>
+    <string name="stage_mid">중기</string>
+    <string name="stage_late">후기</string>
+    <string name="stage_peak">원만</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">입문 지망자</string>
+    <string name="rank_outer_disciple">외문 제자</string>
+    <string name="rank_inner_disciple">내문 제자</string>
+    <string name="rank_core_disciple">핵심 제자</string>
+    <string name="rank_hall_elder">당주 장로</string>
+    <string name="rank_grand_elder">대장로</string>
+    <string name="rank_sect_master">장문인</string>
+    <string name="rank_supreme_ancestor">태상태조</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">대기 중</string>
+    <string name="state_resting">휴식 및 회복 중</string>
+    <string name="state_eating">영식 식사 중</string>
+    <string name="state_cultivating">명상 수련 중</string>
+    <string name="state_sect_duty">문파 직무 수행 중</string>
+    <string name="state_breakthrough">경지 돌파 중</string>
+    <string name="state_tribulation">천겁 시련 극복 중</string>
+    <string name="state_qi_deviation">주화입마 (심마 반격)</string>
+    <string name="state_injured">중상 치료 중</string>
+    <string name="state_ascended">선계 비승 완료</string>
+    <string name="state_deceased">도소신사 (윤회 전생)</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">포만도 / 영식</string>
+    <string name="attr_energy">체력 / 기력</string>
+    <string name="attr_mood">심정 / 정신력</string>
+    <string name="attr_health">신체 건강</string>
+    <string name="attr_qi_satiety">영기 충만도</string>
+    <string name="attr_comfort">거주 쾌적도</string>
+    <string name="attr_dao_heart">도심 안정도</string>
+    <string name="attr_talent">자질 품계</string>
+    <string name="attr_age">연령</string>
+    <string name="attr_lifespan">수명</string>
+    <string name="attr_elemental_affinity">영근 속성</string>
+
+    <!-- Elements -->
+    <string name="element_metal">금속성 (金)</string>
+    <string name="element_wood">목속성 (木)</string>
+    <string name="element_water">수속성 (水)</string>
+    <string name="element_fire">화속성 (火)</string>
+    <string name="element_earth">토속성 (土)</string>
+    <string name="element_wind">풍속성 (風)</string>
+    <string name="element_lightning">뇌속성 (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">문파 대전</string>
+    <string name="bld_alchemy_pavilion">연단각</string>
+    <string name="bld_herb_garden">영초원</string>
+    <string name="bld_forging_chamber">주조방</string>
+    <string name="bld_spirit_mine">영석 광맥</string>
+    <string name="bld_meditation_cave">정심 동부</string>
+    <string name="bld_scripture_library">장경각</string>
+    <string name="bld_dining_hall">영식당</string>
+    <string name="bld_dormitory">제자 처소</string>
+    <string name="bld_tribulation_platform">도겁대</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">영석</string>
+    <string name="res_spirit_qi">영기</string>
+    <string name="res_herbs">영약초</string>
+    <string name="res_ores">선광석</string>
+    <string name="res_spirit_pills">수련 영단</string>
+    <string name="res_contribution">문파 공헌도</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">확인</string>
+    <string name="btn_cancel">취소</string>
+    <string name="btn_close">닫기</string>
+    <string name="btn_recruit">제자 모집</string>
+    <string name="btn_assign">직무 배정</string>
+    <string name="btn_upgrade">시설 강화</string>
+    <string name="btn_breakthrough">경지 돌파</string>
+    <string name="btn_feed">영식 급여</string>
+    <string name="btn_rest">휴식 지정</string>
+    <string name="btn_heal">상처 치료</string>
+    <string name="btn_cultivate">폐관 수련</string>
+    <string name="btn_trade">시장 거래</string>
+    <string name="btn_battle">문파 출전</string>
+    <string name="btn_settings">설정</string>
+    <string name="btn_save">진행 저장</string>
+    <string name="btn_language">언어 변경</string>
+    <string name="btn_stats">문파 통계</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">언어 선택</string>
+    <string name="lang_en">영어 (English)</string>
+    <string name="lang_ja">일본어 (日本語)</string>
+    <string name="lang_ko">한국어 (한국어)</string>
+    <string name="lang_zh">중국어 (简体中文)</string>
+    <string name="lang_id">인도네시아어 (Bahasa Indonesia)</string>
+    <string name="lang_ar">아랍어 (العربية)</string>
+    <string name="lang_es">스페인어 (Español)</string>
+    <string name="lang_pt">포르투갈어 (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">조언: 연단각에 제자를 배치하여 돌파용 영단을 조제하세요.</string>
+    <string name="tip_2">조언: 도심 안정도가 높을수록 주화입마 위험이 크게 줄어듭니다.</string>
+    <string name="tip_3">조언: 영근 속성과 일치하는 공법을 수련하면 속도가 50% 향상됩니다.</string>
+    <string name="tip_4">조언: 제자 처소를 업그레이드하면 기력 회복 속도가 빨라집니다.</string>
+    <string name="tip_5">조언: 영식당의 식사는 포만감을 채우고 심정을 안정시킵니다.</string>
+    <string name="tip_6">조언: 천겁에 도전하기 전에 방어용 법보를 철저히 준비하세요.</string>
+    <string name="tip_7">조언: 핵심 제자는 외문 제자를 지도하여 축기 성공을 돕습니다.</string>
+    <string name="tip_8">조언: 잉여 광석을 시장에 판매하여 희귀 약초를 획득하세요.</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">선문 결전</string>
+    <string name="combat_victory">완벽한 승리!</string>
+    <string name="combat_defeat">문파 패배</string>
+    <string name="combat_retreat">전략적 후퇴</string>
+    <string name="combat_round">제 %1$d 라운드</string>
+    <string name="combat_hp">생명: %1$d / %2$d</string>
+    <string name="combat_mp">영력: %1$d / %2$d</string>
+    <string name="combat_atk">공격력: %1$d</string>
+    <string name="combat_def">방어력: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">인재 모집</string>
+    <string name="dialog_recruit_desc">산문 입구에서 비범한 영근을 가진 범인을 탐색합니다.</string>
+    <string name="dialog_disciple_detail_title">제자 수련 기록</string>
+    <string name="dialog_assign_title">문파 직무 배정</string>
+    <string name="dialog_settings_title">게임 설정</string>
+    <string name="dialog_music_volume">음악 음량</string>
+    <string name="dialog_sfx_volume">효과음 음량</string>
+    <string name="dialog_haptic_feedback">진동 피드백</string>
+</resources>

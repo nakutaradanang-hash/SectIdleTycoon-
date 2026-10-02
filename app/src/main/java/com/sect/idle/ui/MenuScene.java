@@ -450,4 +450,15 @@ public final class MenuScene {
                 break;
         }
     }
+
+    public void destroy() {
+        if (titleGlowBitmap != null && !titleGlowBitmap.isRecycled()) {
+            titleGlowBitmap.recycle();
+            titleGlowBitmap = null;
+        }
+        if (parallaxBg != null && !parallaxBg.isRecycled()) {
+            parallaxBg.recycle();
+            parallaxBg = null;
+        }
+    }
 }

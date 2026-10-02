@@ -4,18 +4,23 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 /**
- * DiscipleEntity - Persists all unlocked and recruited disciples.
+ * DiscipleEntity - Room Database entity for immortal cultivators.
+ * Represents core attributes including name, cultivation level, spirit energy,
+ * elemental affinities, combat statistics, and operational assignments.
  */
 @Entity(tableName = "disciples")
 data class DiscipleEntity(
     @PrimaryKey
     val id: String,
     val name: String,
+    val cultivationLevel: Int = 0,
+    val spiritEnergy: Int = 100,
+    val maxSpiritEnergy: Int = 100,
     val title: String = "",
     val isMale: Boolean = true,
     val age: Int = 18,
     val lifespan: Int = 100,
-    val realm: Int = 0,
+    val realm: Int = cultivationLevel,
     val realmExp: Int = 0,
     val element: Int = 0,
     val talentName: String = "Common Roots",
@@ -29,8 +34,8 @@ data class DiscipleEntity(
     val hp: Int = 100,
     val maxMp: Int = 50,
     val mp: Int = 50,
-    val energy: Int = 100,
-    val maxEnergy: Int = 100,
+    val energy: Int = spiritEnergy,
+    val maxEnergy: Int = maxSpiritEnergy,
     val mood: Int = 100,
     val stress: Int = 0,
     val loyalty: Int = 100,

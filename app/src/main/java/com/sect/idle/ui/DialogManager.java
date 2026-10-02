@@ -1252,6 +1252,39 @@ public final class DialogManager {
         });
         root.addView(btnDiag);
 
+        // Language Selection Button (English, Japanese, Korean, Chinese, Indonesian, Arabic, Spanish, Portuguese)
+        Button btnLanguage = new Button(context);
+        String currLangName = com.sect.idle.utils.LocalizationManager.getLanguageNativeName(
+            com.sect.idle.utils.LocalizationManager.getInstance(context).getCurrentLanguage()
+        );
+        btnLanguage.setText("🌐 " + context.getString(R.string.btn_language) + " (" + currLangName + ")");
+        btnLanguage.setBackgroundResource(R.drawable.bg_button_jade);
+        btnLanguage.setTextColor(0xFFFFD700);
+        btnLanguage.setTextSize(12);
+        btnLanguage.setTypeface(Typeface.DEFAULT_BOLD);
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        lp.setMargins(0, 8, 0, 0);
+        btnLanguage.setLayoutParams(lp);
+        btnLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                playClickSfx();
+                if (context instanceof Activity) {
+                    com.sect.idle.utils.LocalizationManager.getInstance(context).showLanguageDialog((Activity) context, new com.sect.idle.utils.LocalizationManager.LanguageChangeListener() {
+                        @Override
+                        public void onLanguageChanged(String newLanguageCode) {
+                            Toast.makeText(context, context.getString(R.string.btn_language) + ": " +
+                                com.sect.idle.utils.LocalizationManager.getLanguageNativeName(newLanguageCode), Toast.LENGTH_SHORT).show();
+                            dismissDialog(modal.dialog);
+                            showSettingsDialog(cb);
+                        }
+                    });
+                }
+            }
+        });
+        root.addView(btnLanguage);
+
         // Save & Exit Settings Button
         Button btnSave = new Button(context);
         btnSave.setText("✓ Apply & Close");

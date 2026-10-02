@@ -225,6 +225,17 @@ public final class Disciple {
         this.name = name != null ? name : "Disciple";
     }
 
+    public Disciple(String name, int realm) {
+        this(name);
+        this.realm = realm;
+        recalculateStats();
+    }
+
+    public Disciple(String name, int realm, int element) {
+        this(name, realm);
+        this.element = element;
+    }
+
     public void initStats(int s, int a, int i, int l, int v, int w, int c) {
         str = s; agi = a; intel = i; lck = l; vit = v; wis = w; cha = c;
         stats[STAT_STR] = s; stats[STAT_AGI] = a; stats[STAT_INT] = i;

@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">Secta Inmortal</string>
+    <string name="app_title">SECTA INMORTAL</string>
+    <string name="app_subtitle">El Camino Inmortal · THE IMMORTAL PATH</string>
+    <string name="loading_sect_data">Cargando Datos de la Secta… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ Condensación de Qi (炼气期) · Reuniendo Esencia Celestial ✦</string>
+    <string name="splash_stage_2">✦ Establecimiento de Fundación (筑基期) · Abriendo Meridianos ✦</string>
+    <string name="splash_stage_3">✦ Formación del Núcleo Dorado (金丹期) · Refinando Venas de Dragón ✦</string>
+    <string name="splash_stage_4">✦ Alma Naciente (元婴期) · Armonizando Leyes del Dao ✦</string>
+    <string name="splash_stage_5">✦ Ascensión Inmortal (飞升成仙) · ¡Puertas de la Secta Abiertas! ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">Mortal (凡人)</string>
+    <string name="realm_qi_condensation">Condensación de Qi (炼气期)</string>
+    <string name="realm_foundation_establishment">Establecimiento de Fundación (筑基期)</string>
+    <string name="realm_core_formation">Núcleo Dorado (金丹期)</string>
+    <string name="realm_nascent_soul">Alma Naciente (元婴期)</string>
+    <string name="realm_soul_transformation">Transformación del Alma (化神期)</string>
+    <string name="realm_void_refinement">Refinamiento del Vacío (炼虚期)</string>
+    <string name="realm_body_integration">Integración Corporal (合体期)</string>
+    <string name="realm_tribulation_transcendence">Trascendencia de Tribulación (渡劫期)</string>
+    <string name="realm_true_immortal">Inmortal Verdadero (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">Etapa Inicial</string>
+    <string name="stage_mid">Etapa Media</string>
+    <string name="stage_late">Etapa Tardía</string>
+    <string name="stage_peak">Círculo Cumbre</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">Aspirante Mortal</string>
+    <string name="rank_outer_disciple">Discípulo Externo</string>
+    <string name="rank_inner_disciple">Discípulo Interno</string>
+    <string name="rank_core_disciple">Discípulo Principal</string>
+    <string name="rank_hall_elder">Anciano del Salón</string>
+    <string name="rank_grand_elder">Gran Anciano</string>
+    <string name="rank_sect_master">Maestro de Secta</string>
+    <string name="rank_supreme_ancestor">Ancestro Supremo</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">En Espera</string>
+    <string name="state_resting">Descansando y Recuperándose</string>
+    <string name="state_eating">Consumiendo Alimento Espiritual</string>
+    <string name="state_cultivating">Meditando y Cultivando</string>
+    <string name="state_sect_duty">Cumpliendo Deberes de la Secta</string>
+    <string name="state_breakthrough">Intentando Avance de Reino</string>
+    <string name="state_tribulation">Enfrentando Tribulación Celestial</string>
+    <string name="state_qi_deviation">Desviación de Qi (Contragolpe Demoníaco)</string>
+    <string name="state_injured">Gravemente Herido</string>
+    <string name="state_ascended">Ascendido a la Inmortalidad</string>
+    <string name="state_deceased">Caído y Retornado al Samsara</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">Saciedad / Alimento Espiritual</string>
+    <string name="attr_energy">Energía Física</string>
+    <string name="attr_mood">Ánimo y Claridad Mental</string>
+    <string name="attr_health">Salud Física</string>
+    <string name="attr_qi_satiety">Densidad de Qi Espiritual</string>
+    <string name="attr_comfort">Confort del Alojamiento</string>
+    <string name="attr_dao_heart">Estabilidad del Corazón de Dao</string>
+    <string name="attr_talent">Grado de Talento</string>
+    <string name="attr_age">Edad</string>
+    <string name="attr_lifespan">Esperanza de Vida</string>
+    <string name="attr_elemental_affinity">Afinidad de Raíz Espiritual</string>
+
+    <!-- Elements -->
+    <string name="element_metal">Metal / Oro (金)</string>
+    <string name="element_wood">Madera (木)</string>
+    <string name="element_water">Agua (水)</string>
+    <string name="element_fire">Fuego (火)</string>
+    <string name="element_earth">Tierra (土)</string>
+    <string name="element_wind">Viento (风)</string>
+    <string name="element_lightning">Rayo (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">Gran Salón de la Secta</string>
+    <string name="bld_alchemy_pavilion">Pabellón de Alquimia</string>
+    <string name="bld_herb_garden">Jardín de Hierbas Espirituales</string>
+    <string name="bld_forging_chamber">Cámara de Forja de Artefactos</string>
+    <string name="bld_spirit_mine">Veta de Piedras Espirituales</string>
+    <string name="bld_meditation_cave">Cueva de Meditación Serena</string>
+    <string name="bld_scripture_library">Pabellón de Escrituras</string>
+    <string name="bld_dining_hall">Comedor de la Secta</string>
+    <string name="bld_dormitory">Dormitorio de Discípulos</string>
+    <string name="bld_tribulation_platform">Altar de Tribulación</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">Piedras Espirituales</string>
+    <string name="res_spirit_qi">Qi Espiritual</string>
+    <string name="res_herbs">Hierbas Espirituales</string>
+    <string name="res_ores">Minerales Inmortales</string>
+    <string name="res_spirit_pills">Píldoras de Cultivo</string>
+    <string name="res_contribution">Contribución de Secta</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">Confirmar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_close">Cerrar</string>
+    <string name="btn_recruit">Reclutar Discípulos</string>
+    <string name="btn_assign">Asignar Tarea</string>
+    <string name="btn_upgrade">Mejorar Instalación</string>
+    <string name="btn_breakthrough">Intentar Avance</string>
+    <string name="btn_feed">Dar Alimento Espiritual</string>
+    <string name="btn_rest">Enviar a Descansar</string>
+    <string name="btn_heal">Curar Heridas</string>
+    <string name="btn_cultivate">Entrar en Reclusión</string>
+    <string name="btn_trade">Comercio en Mercado</string>
+    <string name="btn_battle">Luchar en Batalla</string>
+    <string name="btn_settings">Ajustes</string>
+    <string name="btn_save">Guardar Progreso</string>
+    <string name="btn_language">Idioma / Language</string>
+    <string name="btn_stats">Estadísticas de Secta</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">Seleccionar Idioma</string>
+    <string name="lang_en">Inglés (English)</string>
+    <string name="lang_ja">Japonés (日本語)</string>
+    <string name="lang_ko">Coreano (한국어)</string>
+    <string name="lang_zh">Chino (简体中文)</string>
+    <string name="lang_id">Indonesio (Bahasa Indonesia)</string>
+    <string name="lang_ar">Árabe (العربية)</string>
+    <string name="lang_es">Español (Spanish)</string>
+    <string name="lang_pt">Portugués (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">Consejo: Asigna discípulos al Pabellón de Alquimia para elaborar píldoras de avance.</string>
+    <string name="tip_2">Consejo: Un Corazón de Dao estable reduce notablemente el riesgo de Desviación de Qi.</string>
+    <string name="tip_3">Consejo: Los discípulos con raíces afines a sus técnicas cultivan un 50% más rápido.</string>
+    <string name="tip_4">Consejo: Mejora los dormitorios para acelerar la recuperación de energía física.</string>
+    <string name="tip_5">Consejo: El Alimento Espiritual en el Comedor sacia el hambre y eleva el ánimo.</string>
+    <string name="tip_6">Consejo: Prepara artefactos protectores antes de afrontar la Tribulación Celestial.</string>
+    <string name="tip_7">Consejo: Los Discípulos Principales pueden guiar a los externos para acelerar su fundación.</string>
+    <string name="tip_8">Consejo: Vende minerales sobrantes en el mercado para comprar ingredientes celestiales.</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">Batalla Inmortal</string>
+    <string name="combat_victory">¡Victoria Gloriosa!</string>
+    <string name="combat_defeat">Secta Derrotada</string>
+    <string name="combat_retreat">Retirada Táctica</string>
+    <string name="combat_round">Ronda %1$d</string>
+    <string name="combat_hp">PS: %1$d / %2$d</string>
+    <string name="combat_mp">Qi: %1$d / %2$d</string>
+    <string name="combat_atk">Ataque: %1$d</string>
+    <string name="combat_def">Defensa: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">Reclutar Talentos</string>
+    <string name="dialog_recruit_desc">Busca mortales con raíces espirituales extraordinarias en las puertas de la montaña.</string>
+    <string name="dialog_disciple_detail_title">Registro de Cultivo del Discípulo</string>
+    <string name="dialog_assign_title">Asignar Deber de Secta</string>
+    <string name="dialog_settings_title">Ajustes del Juego</string>
+    <string name="dialog_music_volume">Volumen de Música</string>
+    <string name="dialog_sfx_volume">Efectos de Sonido</string>
+    <string name="dialog_haptic_feedback">Vibración Háptica</string>
+</resources>

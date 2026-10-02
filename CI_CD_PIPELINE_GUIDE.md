@@ -109,9 +109,17 @@ The automated test suite runs local JVM unit and integration tests using **Robol
    ```
    All tests should report `BUILD SUCCESSFUL`.
 
-3. **Verifying Code Linting**:
+3. **Verifying Code Linting, Static Analysis & Security**:
    ```bash
-   gradle :app:lintDebug
+   # Run static code analysis & clean code audit
+   bash scripts/run-static-analysis.sh
+
+   # Run automated security vulnerability scan
+   bash scripts/run-security-scan.sh
+
+   # Run Gradle verification tasks
+   gradle :app:codeQualityCheck
+   gradle :app:securityScan
    ```
 
 4. **Pushing to Remote Repository**:

@@ -72,6 +72,9 @@ class SectRepository(private val database: SectDatabase) {
                     DiscipleEntity(
                         id = d.id ?: "disc_${i}_${d.name}",
                         name = d.name ?: "Unknown Cultivator",
+                        cultivationLevel = d.realm,
+                        spiritEnergy = d.energy,
+                        maxSpiritEnergy = d.maxEnergy,
                         title = d.title ?: "",
                         isMale = d.isMale,
                         age = d.age,

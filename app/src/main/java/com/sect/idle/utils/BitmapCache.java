@@ -42,50 +42,68 @@ public final class BitmapCache {
     
     public Bitmap get(String key) {
         if (key == null) return null;
-        Bitmap bmp = cache.get(key);
-        if (bmp != null && !bmp.isRecycled()) {
-            hitCount++;
-            return bmp;
+        synchronized (cache) {
+            Bitmap bmp = cache.get(key);
+            if (bmp != null && !bmp.isRecycled()) {
+                hitCount++;
+                return bmp;
+            }
+            missCount++;
+            return null;
         }
-        missCount++;
-        return null;
     }
     
     public void put(String key, Bitmap bitmap) {
         if (key == null || bitmap == null || bitmap.isRecycled()) return;
-        cache.put(key, bitmap);
+        synchronized (cache) {
+            cache.put(key, bitmap);
+        }
     }
     
     public Bitmap remove(String key) {
         if (key == null) return null;
-        return cache.remove(key);
+        synchronized (cache) {
+            return cache.remove(key);
+        }
     }
     
     public boolean contains(String key) {
         if (key == null) return false;
-        Bitmap bmp = cache.get(key);
-        return bmp != null && !bmp.isRecycled();
+        synchronized (cache) {
+            Bitmap bmp = cache.get(key);
+            return bmp != null && !bmp.isRecycled();
+        }
     }
     
     public void clear() {
-        cache.evictAll();
+        synchronized (cache) {
+            cache.evictAll();
+        }
     }
     
     public void trimToSize(int maxSizeKB) {
-        cache.trimToSize(maxSizeKB);
+        synchronized (cache) {
+            cache.trimToSize(maxSizeKB);
+        }
     }
     
     public void onLowMemory() {
-        cache.evictAll();
+        synchronized (cache) {
+            cache.evictAll();
+        }
     }
     
     public String getStats() {
-        int total = hitCount + missCount;
-        float hitRate = total > 0 ? (hitCount * 100f / total) : 0;
-        return "Cache: " + cache.size() + "/" + cache.maxSize() + "KB Hits:" + String.format(java.util.Locale.US, "%.1f", hitRate) + "% Evicted:" + evictCount;
+        synchronized (cache) {
+            int total = hitCount + missCount;
+            float hitRate = total > 0 ? (hitCount * 100f / total) : 0;
+            return "Cache: " + cache.size() + "/" + cache.maxSize() + "KB Hits:" + String.format(java.util.Locale.US, "%.1f", hitRate) + "% Evicted:" + evictCount;
+        }
     }
     
     public void resetStats() {
-        hitCount = 0; missCount = 0; evictCount = 0;
+        synchronized (cache) {
+            hitCount = 0; missCount = 0; evictCount = 0;
+        }
     }
 }

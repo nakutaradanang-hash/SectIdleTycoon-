@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">Seita Imortal</string>
+    <string name="app_title">SEITA IMORTAL</string>
+    <string name="app_subtitle">O Caminho Imortal · THE IMMORTAL PATH</string>
+    <string name="loading_sect_data">Carregando Dados da Seita… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ Condensação de Qi (炼气期) · Reunindo Essência Celestial ✦</string>
+    <string name="splash_stage_2">✦ Estabelecimento da Fundação (筑基期) · Abrindo Meridianos ✦</string>
+    <string name="splash_stage_3">✦ Formação do Núcleo Dourado (金丹期) · Refinando Veios de Dragão ✦</string>
+    <string name="splash_stage_4">✦ Alma Nascente (元婴期) · Harmonizando Leis do Dao ✦</string>
+    <string name="splash_stage_5">✦ Ascensão Imortal (飞升成仙) · Portões da Seita Abertos! ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">Mortal (凡人)</string>
+    <string name="realm_qi_condensation">Condensação de Qi (炼气期)</string>
+    <string name="realm_foundation_establishment">Estabelecimento da Fundação (筑基期)</string>
+    <string name="realm_core_formation">Núcleo Dourado (金丹期)</string>
+    <string name="realm_nascent_soul">Alma Nascente (元婴期)</string>
+    <string name="realm_soul_transformation">Transformação da Alma (化神期)</string>
+    <string name="realm_void_refinement">Refinamento do Vazio (炼虚期)</string>
+    <string name="realm_body_integration">Integração Corporal (合体期)</string>
+    <string name="realm_tribulation_transcendence">Transcendência de Tribulação (渡劫期)</string>
+    <string name="realm_true_immortal">Imortal Verdadeiro (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">Estágio Inicial</string>
+    <string name="stage_mid">Estágio Intermediário</string>
+    <string name="stage_late">Estágio Avançado</string>
+    <string name="stage_peak">Círculo do Ápice</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">Aspirante Mortal</string>
+    <string name="rank_outer_disciple">Discípulo Externo</string>
+    <string name="rank_inner_disciple">Discípulo Interno</string>
+    <string name="rank_core_disciple">Discípulo Principal</string>
+    <string name="rank_hall_elder">Ancião do Salão</string>
+    <string name="rank_grand_elder">Grão-Ancião</string>
+    <string name="rank_sect_master">Mestre da Seita</string>
+    <string name="rank_supreme_ancestor">Ancestral Supremo</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">Em Espera</string>
+    <string name="state_resting">Descansando e Recuperando</string>
+    <string name="state_eating">Consumindo Alimento Espiritual</string>
+    <string name="state_cultivating">Meditando e Cultivando</string>
+    <string name="state_sect_duty">Cumprindo Deveres da Seita</string>
+    <string name="state_breakthrough">Tentando Rompimento de Reino</string>
+    <string name="state_tribulation">Enfrentando Tribulação Celestial</string>
+    <string name="state_qi_deviation">Desvio de Qi (Reação Demoníaca)</string>
+    <string name="state_injured">Gravemente Ferido</string>
+    <string name="state_ascended">Ascendido à Imortalidade</string>
+    <string name="state_deceased">Caído e Retornado ao Samsara</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">Saciedade / Alimento Espiritual</string>
+    <string name="attr_energy">Energia Física</string>
+    <string name="attr_mood">Humor e Sanidade</string>
+    <string name="attr_health">Saúde Física</string>
+    <string name="attr_qi_satiety">Densidade de Qi Espiritual</string>
+    <string name="attr_comfort">Conforto do Alojamento</string>
+    <string name="attr_dao_heart">Estabilidade do Coração de Dao</string>
+    <string name="attr_talent">Grau de Talento</string>
+    <string name="attr_age">Idade</string>
+    <string name="attr_lifespan">Expectativa de Vida</string>
+    <string name="attr_elemental_affinity">Afinidade de Raiz Espiritual</string>
+
+    <!-- Elements -->
+    <string name="element_metal">Metal / Ouro (金)</string>
+    <string name="element_wood">Madeira (木)</string>
+    <string name="element_water">Água (水)</string>
+    <string name="element_fire">Fogo (火)</string>
+    <string name="element_earth">Terra (土)</string>
+    <string name="element_wind">Vento (风)</string>
+    <string name="element_lightning">Relâmpago (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">Grande Salão da Seita</string>
+    <string name="bld_alchemy_pavilion">Pavilhão de Alquimia</string>
+    <string name="bld_herb_garden">Jardim de Ervas Espirituais</string>
+    <string name="bld_forging_chamber">Câmara de Forja de Artefatos</string>
+    <string name="bld_spirit_mine">Veio de Pedras Espirituais</string>
+    <string name="bld_meditation_cave">Caverna de Meditação Serena</string>
+    <string name="bld_scripture_library">Pavilhão de Escrituras</string>
+    <string name="bld_dining_hall">Refeitório da Seita</string>
+    <string name="bld_dormitory">Alojamento de Discípulos</string>
+    <string name="bld_tribulation_platform">Altar de Tribulação</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">Pedras Espirituais</string>
+    <string name="res_spirit_qi">Qi Espiritual</string>
+    <string name="res_herbs">Ervas Espirituais</string>
+    <string name="res_ores">Minérios Imortais</string>
+    <string name="res_spirit_pills">Pílulas de Cultivo</string>
+    <string name="res_contribution">Contribuição de Seita</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">Confirmar</string>
+    <string name="btn_cancel">Cancelar</string>
+    <string name="btn_close">Fechar</string>
+    <string name="btn_recruit">Recrutar Discípulos</string>
+    <string name="btn_assign">Atribuir Dever</string>
+    <string name="btn_upgrade">Aprimorar Instalação</string>
+    <string name="btn_breakthrough">Tentar Rompimento</string>
+    <string name="btn_feed">Dar Alimento Espiritual</string>
+    <string name="btn_rest">Enviar para Descanso</string>
+    <string name="btn_heal">Curar Ferimentos</string>
+    <string name="btn_cultivate">Entrar em Reclusão</string>
+    <string name="btn_trade">Comércio no Mercado</string>
+    <string name="btn_battle">Batalhar</string>
+    <string name="btn_settings">Configurações</string>
+    <string name="btn_save">Salvar Progresso</string>
+    <string name="btn_language">Idioma / Language</string>
+    <string name="btn_stats">Estatísticas da Seita</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">Selecionar Idioma</string>
+    <string name="lang_en">Inglês (English)</string>
+    <string name="lang_ja">Japonês (日本語)</string>
+    <string name="lang_ko">Coreano (한국어)</string>
+    <string name="lang_zh">Chinês (简体中文)</string>
+    <string name="lang_id">Indonésio (Bahasa Indonesia)</string>
+    <string name="lang_ar">Árabe (العربية)</string>
+    <string name="lang_es">Espanhol (Español)</string>
+    <string name="lang_pt">Português (Portuguese)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">Dica: Atribua discípulos ao Pavilhão de Alquimia para fabricar pílulas de rompimento.</string>
+    <string name="tip_2">Dica: Um Coração de Dao estável reduz bastante as chances de Desvio de Qi.</string>
+    <string name="tip_3">Dica: Discípulos com raízes compatíveis com suas técnicas cultivam 50% mais rápido.</string>
+    <string name="tip_4">Dica: Aprimore os alojamentos para acelerar a recuperação de energia física.</string>
+    <string name="tip_5">Dica: O Alimento Espiritual no Refeitório sacia a fome e melhora o humor.</string>
+    <string name="tip_6">Dica: Prepare artefatos de proteção antes de enfrentar a Tribulação Celestial.</string>
+    <string name="tip_7">Dica: Discípulos Principais podem orientar os externos para acelerar sua fundação.</string>
+    <string name="tip_8">Dica: Venda minérios excedentes no mercado para comprar ingredientes celestiais.</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">Batalha Imortal</string>
+    <string name="combat_victory">Vitória Gloriosa!</string>
+    <string name="combat_defeat">Seita Derrotada</string>
+    <string name="combat_retreat">Recuo Tático</string>
+    <string name="combat_round">Rodada %1$d</string>
+    <string name="combat_hp">PV: %1$d / %2$d</string>
+    <string name="combat_mp">Qi: %1$d / %2$d</string>
+    <string name="combat_atk">Ataque: %1$d</string>
+    <string name="combat_def">Defesa: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">Recrutar Talentos</string>
+    <string name="dialog_recruit_desc">Procure mortais com raízes espirituais extraordinárias nos portões da montanha.</string>
+    <string name="dialog_disciple_detail_title">Registro de Cultivo do Discípulo</string>
+    <string name="dialog_assign_title">Atribuir Tarefa da Seita</string>
+    <string name="dialog_settings_title">Configurações do Jogo</string>
+    <string name="dialog_music_volume">Volume da Música</string>
+    <string name="dialog_sfx_volume">Efeitos Sonoros</string>
+    <string name="dialog_haptic_feedback">Vibração Tátil</string>
+</resources>

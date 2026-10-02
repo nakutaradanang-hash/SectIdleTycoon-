@@ -1449,11 +1449,20 @@ public final class SectScene {
             lightBakedBitmap.recycle();
             lightBakedBitmap = null;
         }
+        if (openWorldBg != null && !openWorldBg.isRecycled()) {
+            openWorldBg.recycle();
+            openWorldBg = null;
+        }
         for (int i = 0; i < building3DCache.length; i++) {
             if (building3DCache[i] != null && !building3DCache[i].isRecycled()) {
                 building3DCache[i].recycle();
             }
             building3DCache[i] = null;
+        }
+        for (Bitmap bmp : disciple3DCache.values()) {
+            if (bmp != null && !bmp.isRecycled()) {
+                bmp.recycle();
+            }
         }
         disciple3DCache.clear();
     }

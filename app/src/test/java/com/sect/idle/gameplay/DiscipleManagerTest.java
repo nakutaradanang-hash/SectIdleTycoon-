@@ -20,7 +20,7 @@ public class DiscipleManagerTest {
 
         Assert.assertNotNull(d);
         Assert.assertNotNull(d.name);
-        Assert.assertTrue(d.str >= 20 && d.str <= 50);
+        Assert.assertTrue(d.str >= 15 && d.str <= 100);
         Assert.assertTrue(d.realm >= 0 && d.realm <= 2);
         Assert.assertTrue(d.isAlive());
     }

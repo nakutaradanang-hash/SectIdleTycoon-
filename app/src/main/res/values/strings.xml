@@ -1,3 +1,159 @@
 <resources>
+    <!-- App & Identity -->
     <string name="app_name">Idle Sect</string>
+    <string name="app_title">SECT IDLE</string>
+    <string name="app_subtitle">修仙之路 · THE IMMORTAL PATH</string>
+    <string name="loading_sect_data">Loading Sect Data… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ Qi Condensation (炼气期) · Gathering Heaven &amp; Earth Qi ✦</string>
+    <string name="splash_stage_2">✦ Foundation Establishment (筑基期) · Opening Meridians ✦</string>
+    <string name="splash_stage_3">✦ Core Formation (金丹期) · Refining Sect Dragon Veins ✦</string>
+    <string name="splash_stage_4">✦ Nascent Soul (元婴期) · Harmonizing Dao Laws ✦</string>
+    <string name="splash_stage_5">✦ Immortal Ascension (飞升成仙) · Sect Gates Opening! ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">Mortal (凡人)</string>
+    <string name="realm_qi_condensation">Qi Condensation (炼气期)</string>
+    <string name="realm_foundation_establishment">Foundation Establishment (筑基期)</string>
+    <string name="realm_core_formation">Core Formation (金丹期)</string>
+    <string name="realm_nascent_soul">Nascent Soul (元婴期)</string>
+    <string name="realm_soul_transformation">Soul Transformation (化神期)</string>
+    <string name="realm_void_refinement">Void Refinement (炼虚期)</string>
+    <string name="realm_body_integration">Body Integration (合体期)</string>
+    <string name="realm_tribulation_transcendence">Tribulation Transcendence (渡劫期)</string>
+    <string name="realm_true_immortal">True Immortal (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">Early Stage</string>
+    <string name="stage_mid">Mid Stage</string>
+    <string name="stage_late">Late Stage</string>
+    <string name="stage_peak">Peak Circle</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">Mortal Aspirant</string>
+    <string name="rank_outer_disciple">Outer Disciple</string>
+    <string name="rank_inner_disciple">Inner Disciple</string>
+    <string name="rank_core_disciple">Core Disciple</string>
+    <string name="rank_hall_elder">Hall Elder</string>
+    <string name="rank_grand_elder">Grand Elder</string>
+    <string name="rank_sect_master">Sect Master</string>
+    <string name="rank_supreme_ancestor">Supreme Ancestor</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">Idle</string>
+    <string name="state_resting">Resting &amp; Recovering</string>
+    <string name="state_eating">Dining &amp; Nourishing</string>
+    <string name="state_cultivating">Meditating &amp; Cultivating</string>
+    <string name="state_sect_duty">Fulfilling Sect Duty</string>
+    <string name="state_breakthrough">Breaking Through Realm</string>
+    <string name="state_tribulation">Undergoing Heavenly Tribulation</string>
+    <string name="state_qi_deviation">Qi Deviation (Demonic Backlash)</string>
+    <string name="state_injured">Seriously Injured</string>
+    <string name="state_ascended">Ascended to Immortality</string>
+    <string name="state_deceased">Fallen &amp; Returned to Samsara</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">Hunger / Satiety</string>
+    <string name="attr_energy">Physical Energy</string>
+    <string name="attr_mood">Mood &amp; Sanity</string>
+    <string name="attr_health">Physical Health</string>
+    <string name="attr_qi_satiety">Spiritual Qi Density</string>
+    <string name="attr_comfort">Living Comfort</string>
+    <string name="attr_dao_heart">Dao Heart Stability</string>
+    <string name="attr_talent">Talent Grade</string>
+    <string name="attr_age">Age</string>
+    <string name="attr_lifespan">Lifespan</string>
+    <string name="attr_elemental_affinity">Spiritual Root Affinity</string>
+
+    <!-- Elements -->
+    <string name="element_metal">Gold / Metal (金)</string>
+    <string name="element_wood">Wood (木)</string>
+    <string name="element_water">Water (水)</string>
+    <string name="element_fire">Fire (火)</string>
+    <string name="element_earth">Earth (土)</string>
+    <string name="element_wind">Wind (风)</string>
+    <string name="element_lightning">Lightning (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">Grand Sect Hall</string>
+    <string name="bld_alchemy_pavilion">Alchemy Pavilion</string>
+    <string name="bld_herb_garden">Spirit Herb Garden</string>
+    <string name="bld_forging_chamber">Artifact Forging Chamber</string>
+    <string name="bld_spirit_mine">Spirit Stone Vein</string>
+    <string name="bld_meditation_cave">Spirit Meditation Cave</string>
+    <string name="bld_scripture_library">Scripture Pavilion</string>
+    <string name="bld_dining_hall">Sect Dining Hall</string>
+    <string name="bld_dormitory">Disciple Quarters</string>
+    <string name="bld_tribulation_platform">Tribulation Altar</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">Spirit Stones</string>
+    <string name="res_spirit_qi">Spirit Qi</string>
+    <string name="res_herbs">Spiritual Herbs</string>
+    <string name="res_ores">Immortal Ores</string>
+    <string name="res_spirit_pills">Cultivation Pills</string>
+    <string name="res_contribution">Sect Contribution</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">Confirm</string>
+    <string name="btn_cancel">Cancel</string>
+    <string name="btn_close">Close</string>
+    <string name="btn_recruit">Recruit Disciples</string>
+    <string name="btn_assign">Assign Duty</string>
+    <string name="btn_upgrade">Upgrade Facility</string>
+    <string name="btn_breakthrough">Attempt Breakthrough</string>
+    <string name="btn_feed">Nourish with Spirit Food</string>
+    <string name="btn_rest">Send to Rest</string>
+    <string name="btn_heal">Heal Injuries</string>
+    <string name="btn_cultivate">Enter Seclusion</string>
+    <string name="btn_trade">Market Trade</string>
+    <string name="btn_battle">Engage in Battle</string>
+    <string name="btn_settings">Settings</string>
+    <string name="btn_save">Save Progress</string>
+    <string name="btn_language">Language / 语言</string>
+    <string name="btn_stats">Sect Statistics</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">Select Language</string>
+    <string name="lang_en">English (English)</string>
+    <string name="lang_ja">Japanese (日本語)</string>
+    <string name="lang_ko">Korean (한국어)</string>
+    <string name="lang_zh">Chinese (简体中文)</string>
+    <string name="lang_id">Indonesian (Bahasa Indonesia)</string>
+    <string name="lang_ar">Arabic (العربية)</string>
+    <string name="lang_es">Spanish (Español)</string>
+    <string name="lang_pt">Portuguese (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">Tip: Assign disciples to Alchemy Pavilion to craft breakthrough pills.</string>
+    <string name="tip_2">Tip: Higher Dao Heart stability significantly reduces Qi Deviation chances.</string>
+    <string name="tip_3">Tip: Disciples with matching elemental roots cultivate 50% faster.</string>
+    <string name="tip_4">Tip: Keep disciple quarters upgraded to boost physical energy recovery.</string>
+    <string name="tip_5">Tip: Spirit Food in the Dining Hall restores hunger and boosts mood.</string>
+    <string name="tip_6">Tip: Prepare protective artifacts before attempting Heavenly Tribulation.</string>
+    <string name="tip_7">Tip: Core Disciples can mentor outer disciples to speed up foundation building.</string>
+    <string name="tip_8">Tip: Trade surplus spirit ores in the market for rare celestial ingredients.</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">Immortal Battle</string>
+    <string name="combat_victory">Glorious Victory!</string>
+    <string name="combat_defeat">Sect Defeated</string>
+    <string name="combat_retreat">Tactical Retreat</string>
+    <string name="combat_round">Round %1$d</string>
+    <string name="combat_hp">HP: %1$d / %2$d</string>
+    <string name="combat_mp">Qi: %1$d / %2$d</string>
+    <string name="combat_atk">Attack: %1$d</string>
+    <string name="combat_def">Defense: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">Recruit Talents</string>
+    <string name="dialog_recruit_desc">Seek mortals with extraordinary spiritual roots at the mountain gate.</string>
+    <string name="dialog_disciple_detail_title">Disciple Cultivation Record</string>
+    <string name="dialog_assign_title">Assign Sect Duty</string>
+    <string name="dialog_settings_title">Game Settings</string>
+    <string name="dialog_music_volume">Music Volume</string>
+    <string name="dialog_sfx_volume">Sound Effects</string>
+    <string name="dialog_haptic_feedback">Haptic Vibration</string>
 </resources>
+

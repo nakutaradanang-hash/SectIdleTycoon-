@@ -21,8 +21,16 @@ public final class FrameLatencyTracker {
     private final AtomicInteger jankFrameCount = new AtomicInteger(0);
     private final AtomicInteger frozenFrameCount = new AtomicInteger(0);
 
+    private static long safeElapsedRealtimeNanos() {
+        try {
+            return SystemClock.elapsedRealtimeNanos();
+        } catch (Throwable t) {
+            return System.nanoTime();
+        }
+    }
+
     public FrameLatencyTracker() {
-        lastFrameTimeNs = SystemClock.elapsedRealtimeNanos();
+        lastFrameTimeNs = safeElapsedRealtimeNanos();
     }
 
     public synchronized void recordFrame(long frameDurationNs) {
@@ -35,7 +43,7 @@ public final class FrameLatencyTracker {
         }
 
         long frameMs = frameDurationNs / 1_000_000L;
-        if (frameMs >= 100) {
+        if (frameMs >= 30) {
             jankFrameCount.incrementAndGet();
         }
         if (frameMs >= 250) {
@@ -47,8 +55,24 @@ public final class FrameLatencyTracker {
         }
     }
 
+    public synchronized void recordFrameTime(long frameDurationNs) {
+        recordFrame(frameDurationNs);
+    }
+
+    public int getJankCount() {
+        return jankFrameCount.get();
+    }
+
+    public int getFreezeCount() {
+        return frozenFrameCount.get();
+    }
+
+    public float getAverageFps() {
+        return cachedFps;
+    }
+
     public synchronized void onFrameRendered() {
-        long now = SystemClock.elapsedRealtimeNanos();
+        long now = safeElapsedRealtimeNanos();
         if (lastFrameTimeNs > 0) {
             long duration = now - lastFrameTimeNs;
             recordFrame(duration);

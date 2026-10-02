@@ -32,11 +32,13 @@ class SectHubViewModel(application: Application) : AndroidViewModel(application)
     private val repository = SectRepository.get(application)
     private val hapticManager = HapticManager.get(application)
     private val resourceManager = CoroutineResourceManager.get()
+    private val milestoneSystem = com.sect.idle.gameplay.MilestoneSystem(application)
     private val random = Random()
 
     init {
         initDefaultHubState()
         syncFromSectData()
+        evaluateMilestones()
         startPeriodicTicker()
 
         viewModelScope.launch {
@@ -137,9 +139,31 @@ class SectHubViewModel(application: Application) : AndroidViewModel(application)
     private fun startPeriodicTicker() {
         tickerJob?.cancel()
         tickerJob = viewModelScope.launch {
+            var tickCounter = 0
             while (isActive) {
                 delay(1000L)
+                tickCounter++
                 val data = SectData.getInstance() ?: continue
+
+                // Coroutine-based Timer: Automatically increments Sect resources every 2 seconds based on disciple count
+                if (tickCounter % 2 == 0) {
+                    val activeDiscipleCount = data.disciples.size.coerceAtLeast(1)
+                    val basePassiveStones = activeDiscipleCount * 3L
+                    data.spiritStones += basePassiveStones
+
+                    val farmers = data.getActiveTaskCount(GameConfig.TASK_FARMING)
+                    val miners = data.getActiveTaskCount(GameConfig.TASK_MINING)
+                    val alchemists = data.getActiveTaskCount(GameConfig.TASK_ALCHEMY)
+
+                    if (farmers > 0) data.spiritHerbs += (farmers * 2L)
+                    if (miners > 0) data.spiritOres += (miners * 2L)
+                    if (alchemists > 0 && data.spiritHerbs >= alchemists * 2) {
+                        data.spiritHerbs -= alchemists * 2
+                        data.spiritPills += alchemists
+                    }
+
+                    data.recalculateEconomy()
+                }
 
                 // Update active expeditions
                 _uiState.update { state ->
@@ -184,6 +208,19 @@ class SectHubViewModel(application: Application) : AndroidViewModel(application)
                         cultivationChamber = state.cultivationChamber.copy(meditationSlots = updatedSlots)
                     )
                 }
+
+                // Periodically evaluate milestones
+                if (tickCounter % 4 == 0) {
+                    evaluateMilestones()
+                }
+
+                // Occasionally trigger random encounters if none is currently active
+                if (tickCounter % 30 == 0 && _uiState.value.activeEncounter == null) {
+                    if (random.nextInt(100) < 35) {
+                        triggerRandomEncounter()
+                    }
+                }
+
                 syncFromSectData()
             }
         }
@@ -669,6 +706,132 @@ class SectHubViewModel(application: Application) : AndroidViewModel(application)
                 }
             }
         } catch (ignored: Exception) {}
+    }
+
+    // =========================================================================
+    // Milestone & Achievement System
+    // =========================================================================
+
+    fun evaluateMilestones() {
+        val data = SectData.getInstance()
+        val discipleList = data?.disciples ?: emptyList<Disciple>()
+        val maxRealm = discipleList.maxOfOrNull { it.realm } ?: 0
+        val currentStones = data?.spiritStones ?: _uiState.value.spiritStones
+        val currentPills = data?.spiritPills ?: _uiState.value.spiritPills
+        val unlockedCount = _uiState.value.worldMap.regions.count { it.isUnlocked }
+
+        val evaluated = milestoneSystem.evaluateMilestones(
+            discipleCount = discipleList.size,
+            maxDiscipleRealm = maxRealm,
+            currentSpiritStones = currentStones,
+            currentSpiritPills = currentPills,
+            unlockedRegionsCount = unlockedCount
+        )
+
+        _uiState.update { it.copy(milestones = evaluated) }
+    }
+
+    fun claimMilestone(milestoneId: String) {
+        val target = _uiState.value.milestones.find { it.id == milestoneId } ?: return
+        if (!target.isCompleted || target.isClaimed) return
+
+        milestoneSystem.markClaimed(milestoneId)
+        val data = SectData.getInstance()
+
+        if (target.rewardStones > 0) {
+            data?.let { it.spiritStones += target.rewardStones }
+        }
+        if (target.rewardJade > 0) {
+            data?.let { it.jade += target.rewardJade.toInt() }
+        }
+        if (target.rewardPills > 0) {
+            data?.let { it.spiritPills += target.rewardPills }
+        }
+
+        evaluateMilestones()
+        syncFromSectData()
+        playSfx(AudioManager.SFX_BREAKTHROUGH)
+        showNotification("🏆 Milestone Claimed: ${target.title}! Rewards added to treasury.")
+        saveState()
+    }
+
+    fun claimAllMilestones() {
+        val claimables = _uiState.value.milestones.filter { it.isCompleted && !it.isClaimed }
+        if (claimables.isEmpty()) return
+
+        var totalStones = 0L
+        var totalJade = 0L
+        var totalPills = 0L
+
+        val data = SectData.getInstance()
+        claimables.forEach { m ->
+            milestoneSystem.markClaimed(m.id)
+            totalStones += m.rewardStones
+            totalJade += m.rewardJade
+            totalPills += m.rewardPills
+        }
+
+        data?.let {
+            it.spiritStones += totalStones
+            it.jade += totalJade.toInt()
+            it.spiritPills += totalPills
+        }
+
+        evaluateMilestones()
+        syncFromSectData()
+        playSfx(AudioManager.SFX_BREAKTHROUGH)
+        showNotification("🏆 Claimed ${claimables.size} Milestones! (+${totalStones} Stones, +${totalJade} Jade, +${totalPills} Pills)")
+        saveState()
+    }
+
+    // =========================================================================
+    // Random Encounter & Sect Events
+    // =========================================================================
+
+    fun triggerRandomEncounter() {
+        val encounter = com.sect.idle.gameplay.SectEncounterSystem.generateRandomEncounter(_uiState.value.sectRealm)
+        _uiState.update { it.copy(activeEncounter = encounter) }
+        playSfx(AudioManager.SFX_SPIRIT_BURST)
+        showNotification("⚡ New Sect Encounter: ${encounter.title} (${encounter.chineseTitle})!")
+    }
+
+    fun resolveEncounter(choiceId: String) {
+        val encounter = _uiState.value.activeEncounter ?: return
+        val result = com.sect.idle.gameplay.SectEncounterSystem.resolveChoice(encounter, choiceId)
+
+        val data = SectData.getInstance()
+        data?.let { d ->
+            d.spiritStones = (d.spiritStones + result.stonesDelta).coerceAtLeast(0L)
+            d.spiritHerbs = (d.spiritHerbs + result.herbsDelta).coerceAtLeast(0L)
+            d.spiritOres = (d.spiritOres + result.oresDelta).coerceAtLeast(0L)
+            d.spiritPills = (d.spiritPills + result.pillsDelta).coerceAtLeast(0L)
+            d.jade = (d.jade + result.jadeDelta.toInt()).coerceAtLeast(0)
+            d.essence = (d.essence + result.essenceDelta.toInt()).coerceAtLeast(0)
+
+            if (result.discipleHpDamagePercent > 0) {
+                d.disciples.forEach { disc ->
+                    val dmg = (disc.maxHp * (result.discipleHpDamagePercent / 100f)).toInt()
+                    disc.hp = (disc.hp - dmg).coerceAtLeast(1)
+                }
+            }
+
+            if (result.recruitNewDisciple) {
+                val newDisciple = com.sect.idle.gameplay.DiscipleManager.getInstance()
+                    .createRandomDisciple(30, 65, 0, 1)
+                d.disciples.add(newDisciple)
+            }
+        }
+
+        _uiState.update { it.copy(activeEncounter = null) }
+        evaluateMilestones()
+        syncFromSectData()
+        playSfx(AudioManager.SFX_UPGRADE)
+        showNotification("${result.title}: ${result.message}")
+        saveState()
+    }
+
+    fun dismissEncounter() {
+        _uiState.update { it.copy(activeEncounter = null) }
     }
 
     override fun onCleared() {

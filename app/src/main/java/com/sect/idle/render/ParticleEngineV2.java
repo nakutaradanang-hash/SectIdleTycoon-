@@ -42,6 +42,7 @@ public final class ParticleEngineV2 {
     private final Paint particlePaint;
     private final Paint additivePaint;
     private final Paint glowPaint;
+    private final android.graphics.RectF tempOvalRect;
     private int screenW, screenH;
 
     public ParticleEngineV2(int screenW, int screenH) {
@@ -64,6 +65,7 @@ public final class ParticleEngineV2 {
         this.additivePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
         this.glowPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         this.glowPaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.ADD));
+        this.tempOvalRect = new android.graphics.RectF();
     }
 
     public void resize(int w, int h) {
@@ -234,7 +236,8 @@ public final class ParticleEngineV2 {
                     break;
                 case TYPE_QI_PETAL:
                     particlePaint.setColor(color);
-                    canvas.drawOval(new android.graphics.RectF(sx - ss * 1.5f, sy - ss * 0.8f, sx + ss * 1.5f, sy + ss * 0.8f), particlePaint);
+                    tempOvalRect.set(sx - ss * 1.5f, sy - ss * 0.8f, sx + ss * 1.5f, sy + ss * 0.8f);
+                    canvas.drawOval(tempOvalRect, particlePaint);
                     break;
                 case TYPE_SMOKE:
                     particlePaint.setColor(color);

@@ -156,6 +156,24 @@ public final class ResourceManager {
     // RESOURCE MUTATIONS WITH ARITHMETIC SAFETY & BOUNDS CHECKING
     // =========================================================================
 
+    public synchronized boolean deduct(long stones, long herbs, long ores) {
+        if (stones < 0 || herbs < 0 || ores < 0) return false;
+        if (this.spiritStones >= stones && this.spiritHerbs >= herbs && this.spiritOres >= ores) {
+            this.spiritStones = DataValidator.safeSubtractNonNegative(this.spiritStones, stones);
+            this.spiritHerbs = DataValidator.safeSubtractNonNegative(this.spiritHerbs, herbs);
+            this.spiritOres = DataValidator.safeSubtractNonNegative(this.spiritOres, ores);
+            SectData data = SectData.getInstance();
+            if (data != null) {
+                data.spiritStones = this.spiritStones;
+                data.spiritHerbs = this.spiritHerbs;
+                data.spiritOres = this.spiritOres;
+            }
+            notifyListeners();
+            return true;
+        }
+        return false;
+    }
+
     public synchronized void addSpiritStones(long amount) {
         if (amount <= 0) return;
         this.spiritStones = DataValidator.clampLong(DataValidator.safeAdd(this.spiritStones, amount), 0L, MAX_RESOURCE_CAP);

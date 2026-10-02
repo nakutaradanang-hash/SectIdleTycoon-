@@ -1,0 +1,158 @@
+<resources>
+    <!-- App & Identity -->
+    <string name="app_name">放置宗門</string>
+    <string name="app_title">放置宗門</string>
+    <string name="app_subtitle">修仙の道 · 不滅の道</string>
+    <string name="loading_sect_data">宗門データ読込中… %1$d%%</string>
+
+    <!-- Cultivation Progress Stages in Splash -->
+    <string name="splash_stage_1">✦ 練気期 (煉氣期) · 天地の霊気を集約中 ✦</string>
+    <string name="splash_stage_2">✦ 築基期 (筑基期) · 経絡を開通中 ✦</string>
+    <string name="splash_stage_3">✦ 金丹期 (金丹期) · 龍脈霊力を凝縮中 ✦</string>
+    <string name="splash_stage_4">✦ 元嬰期 (元嬰期) · 天道法則を調和中 ✦</string>
+    <string name="splash_stage_5">✦ 飛昇成仙 (飛昇成仙) · 宗門の山門が開門！ ✦</string>
+
+    <!-- Cultivation Realms -->
+    <string name="realm_mortal">凡人 (凡人)</string>
+    <string name="realm_qi_condensation">練気期 (煉氣期)</string>
+    <string name="realm_foundation_establishment">築基期 (筑基期)</string>
+    <string name="realm_core_formation">金丹期 (金丹期)</string>
+    <string name="realm_nascent_soul">元嬰期 (元嬰期)</string>
+    <string name="realm_soul_transformation">化神期 (化神期)</string>
+    <string name="realm_void_refinement">煉虚期 (煉虛期)</string>
+    <string name="realm_body_integration">合体期 (合體期)</string>
+    <string name="realm_tribulation_transcendence">渡劫期 (渡劫期)</string>
+    <string name="realm_true_immortal">真仙境 (真仙境)</string>
+
+    <!-- Sub-stages -->
+    <string name="stage_early">初期</string>
+    <string name="stage_mid">中期</string>
+    <string name="stage_late">後期</string>
+    <string name="stage_peak">円満期</string>
+
+    <!-- Disciple Hierarchy Ranks -->
+    <string name="rank_mortal_aspirant">入門志望者</string>
+    <string name="rank_outer_disciple">外門弟子</string>
+    <string name="rank_inner_disciple">内門弟子</string>
+    <string name="rank_core_disciple">核心弟子</string>
+    <string name="rank_hall_elder">堂口長老</string>
+    <string name="rank_grand_elder">大長老</string>
+    <string name="rank_sect_master">宗主</string>
+    <string name="rank_supreme_ancestor">太上太祖</string>
+
+    <!-- Disciple Lifecycle States -->
+    <string name="state_idle">待機中</string>
+    <string name="state_resting">休息・療養中</string>
+    <string name="state_eating">霊膳食事中</string>
+    <string name="state_cultivating">瞑想・修練中</string>
+    <string name="state_sect_duty">宗門任務遂行中</string>
+    <string name="state_breakthrough">境界突破中</string>
+    <string name="state_tribulation">天劫試練中</string>
+    <string name="state_qi_deviation">走火入魔 (心魔反噬)</string>
+    <string name="state_injured">重傷・治療中</string>
+    <string name="state_ascended">仙界飛昇完了</string>
+    <string name="state_deceased">道消身死・輪廻転生</string>
+
+    <!-- Disciple Needs & Attributes -->
+    <string name="attr_hunger">満腹度 / 霊膳</string>
+    <string name="attr_energy">気力・体力</string>
+    <string name="attr_mood">心情・正気度</string>
+    <string name="attr_health">肉体健康</string>
+    <string name="attr_qi_satiety">霊気充実度</string>
+    <string name="attr_comfort">居心地</string>
+    <string name="attr_dao_heart">道心安定度</string>
+    <string name="attr_talent">資質等級</string>
+    <string name="attr_age">年齢</string>
+    <string name="attr_lifespan">寿命</string>
+    <string name="attr_elemental_affinity">霊根属性</string>
+
+    <!-- Elements -->
+    <string name="element_metal">金属性 (金)</string>
+    <string name="element_wood">木属性 (木)</string>
+    <string name="element_water">水属性 (水)</string>
+    <string name="element_fire">火属性 (火)</string>
+    <string name="element_earth">土属性 (土)</string>
+    <string name="element_wind">風属性 (風)</string>
+    <string name="element_lightning">雷属性 (雷)</string>
+
+    <!-- Sect Facilities & Buildings -->
+    <string name="bld_main_hall">宗門大殿</string>
+    <string name="bld_alchemy_pavilion">錬丹閣</string>
+    <string name="bld_herb_garden">霊草園</string>
+    <string name="bld_forging_chamber">鋳造房</string>
+    <string name="bld_spirit_mine">霊石鉱脈</string>
+    <string name="bld_meditation_cave">静心洞府</string>
+    <string name="bld_scripture_library">蔵経閣</string>
+    <string name="bld_dining_hall">霊食坊</string>
+    <string name="bld_dormitory">弟子居所</string>
+    <string name="bld_tribulation_platform">渡劫台</string>
+
+    <!-- Sect Resources -->
+    <string name="res_spirit_stones">霊石</string>
+    <string name="res_spirit_qi">霊気</string>
+    <string name="res_herbs">霊薬草</string>
+    <string name="res_ores">仙鉱石</string>
+    <string name="res_spirit_pills">修練霊丹</string>
+    <string name="res_contribution">宗門貢献度</string>
+
+    <!-- General UI Buttons & Actions -->
+    <string name="btn_confirm">決定</string>
+    <string name="btn_cancel">キャンセル</string>
+    <string name="btn_close">閉じる</string>
+    <string name="btn_recruit">弟子募集</string>
+    <string name="btn_assign">任務割当</string>
+    <string name="btn_upgrade">施設強化</string>
+    <string name="btn_breakthrough">境界突破</string>
+    <string name="btn_feed">霊食給仕</string>
+    <string name="btn_rest">休息命令</string>
+    <string name="btn_heal">怪我治療</string>
+    <string name="btn_cultivate">閉関修練</string>
+    <string name="btn_trade">市場交易</string>
+    <string name="btn_battle">仙門出陣</string>
+    <string name="btn_settings">設定</string>
+    <string name="btn_save">記録保存</string>
+    <string name="btn_language">言語切替</string>
+    <string name="btn_stats">宗門統計</string>
+
+    <!-- Language Names -->
+    <string name="lang_select_title">言語選択</string>
+    <string name="lang_en">英語 (English)</string>
+    <string name="lang_ja">日本語 (Japanese)</string>
+    <string name="lang_ko">韓国語 (한국어)</string>
+    <string name="lang_zh">中国語 (简体中文)</string>
+    <string name="lang_id">インドネシア語 (Bahasa Indonesia)</string>
+    <string name="lang_ar">アラビア語 (العربية)</string>
+    <string name="lang_es">スペイン語 (Español)</string>
+    <string name="lang_pt">ポルトガル語 (Português)</string>
+
+    <!-- Cultivator Wisdom Tips -->
+    <string name="tip_1">助言: 錬丹閣に弟子を配置して突破用霊丹を調合しましょう。</string>
+    <string name="tip_2">助言: 道心が安定しているほど、走火入魔の確率が大幅に低下します。</string>
+    <string name="tip_3">助言: 霊根属性と一致する功法を修練すると修練速度が50%向上します。</string>
+    <string name="tip_4">助言: 弟子居所を改修すると気力回復効率が高まります。</string>
+    <string name="tip_5">助言: 霊食坊の料理は満腹度を満たし、弟子たちの心情を高めます。</string>
+    <string name="tip_6">助言: 天劫に挑む前に防御用法宝を準備しておきましょう。</string>
+    <string name="tip_7">助言: 核心弟子は外門弟子を指導して築基の成功を助けます。</string>
+    <string name="tip_8">助言: 余剰の仙鉱石を市場で売却して珍しい天材地宝を購入しましょう。</string>
+
+    <!-- Combat & War Strings -->
+    <string name="combat_title">仙術決戦</string>
+    <string name="combat_victory">大勝利！</string>
+    <string name="combat_defeat">宗門敗北</string>
+    <string name="combat_retreat">戦略的退却</string>
+    <string name="combat_round">第 %1$d 回戦</string>
+    <string name="combat_hp">生命: %1$d / %2$d</string>
+    <string name="combat_mp">霊力: %1$d / %2$d</string>
+    <string name="combat_atk">攻撃力: %1$d</string>
+    <string name="combat_def">防御力: %1$d</string>
+
+    <!-- Dialog Strings -->
+    <string name="dialog_recruit_title">優秀な弟子を招聘</string>
+    <string name="dialog_recruit_desc">山門前で卓越した霊根を持つ凡人を探索します。</string>
+    <string name="dialog_disciple_detail_title">弟子修仙録</string>
+    <string name="dialog_assign_title">宗門役職割当</string>
+    <string name="dialog_settings_title">環境設定</string>
+    <string name="dialog_music_volume">BGM 音量</string>
+    <string name="dialog_sfx_volume">効果音 (SFX)</string>
+    <string name="dialog_haptic_feedback">振動フィードバック</string>
+</resources>

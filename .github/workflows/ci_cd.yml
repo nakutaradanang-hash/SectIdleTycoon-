@@ -70,21 +70,30 @@ jobs:
           java-version: '17'
           cache: 'gradle'
 
-      - name: Grant Execute Permission to Gradle Wrapper
-        run: chmod +x gradlew
+      - name: Grant Execute Permission to Gradle Wrapper & Scripts
+        run: chmod +x gradlew scripts/*.sh
 
       - name: Validate Gradle Wrapper Integrity
         uses: gradle/actions/wrapper-validation@v4
 
+      - name: Run Automated Static Code Analysis & Clean Code Audit
+        run: ./scripts/run-static-analysis.sh
+
       - name: Run Android Lint Check
         run: ./gradlew lintDebug --stacktrace --no-daemon
 
-      - name: Archive Lint Reports
+      - name: Run Custom Gradle Code Quality Check
+        run: ./gradlew codeQualityCheck --stacktrace --no-daemon
+
+      - name: Archive Lint & Quality Reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: lint-reports
-          path: app/build/reports/lint-results-debug.html
+          name: lint-and-quality-reports
+          path: |
+            app/build/reports/lint-results-debug.html
+            app/build/reports/lint-results-debug.xml
+            app/build/reports/lint-results-debug.txt
           retention-days: 14
 
   # =========================================================================
@@ -100,8 +109,16 @@ jobs:
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
+      - name: Grant Execute Permission to Scripts
+        run: chmod +x scripts/*.sh
+
+      - name: Run Automated Security Scan & Policy Compliance Audit
+        run: ./scripts/run-security-scan.sh
+
+      - name: Run Custom Gradle Security Scan Task
+        run: ./gradlew securityScan --stacktrace --no-daemon
+
       - name: Secret Leak Detection Scan
-        name: Scan for Hardcoded Credentials
         run: |
           echo "Scanning codebase for exposed secrets and private keys..."
           # Verify no committed private keys or sensitive credentials

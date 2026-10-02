@@ -1,5 +1,6 @@
 package com.sect.idle.hub.ui
 
+import androidx.compose.animation.*
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -13,6 +14,10 @@ import androidx.compose.material.icons.filled.*
 import androidx.compose.material.icons.outlined.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -33,6 +38,40 @@ fun SectOverviewTab(
     viewModel: SectHubViewModel,
     modifier: Modifier = Modifier
 ) {
+    var showSecurityDialog by remember { mutableStateOf(false) }
+    var showAchievementsDialog by remember { mutableStateOf(false) }
+    var showEncounterDialog by remember { mutableStateOf(false) }
+
+    if (showSecurityDialog) {
+        SecuritySettingsDialog(
+            onDismissRequest = { showSecurityDialog = false },
+            sectName = state.sectName
+        )
+    }
+
+    if (showAchievementsDialog) {
+        AchievementsDialog(
+            milestones = state.milestones,
+            onClaimMilestone = { viewModel.claimMilestone(it) },
+            onClaimAll = { viewModel.claimAllMilestones() },
+            onDismissRequest = { showAchievementsDialog = false }
+        )
+    }
+
+    state.activeEncounter?.let { encounter ->
+        if (showEncounterDialog) {
+            EncounterModal(
+                encounter = encounter,
+                state = state,
+                onSelectChoice = { choiceId ->
+                    viewModel.resolveEncounter(choiceId)
+                    showEncounterDialog = false
+                },
+                onDismissRequest = { showEncounterDialog = false }
+            )
+        }
+    }
+
     LazyColumn(
         modifier = modifier
             .fillMaxSize()
@@ -118,33 +157,95 @@ fun SectOverviewTab(
                             }
                         }
 
-                    Spacer(modifier = Modifier.height(14.dp))
+                        Spacer(modifier = Modifier.height(14.dp))
 
-                    // Sect Realm Ascension Progress
-                    Column(modifier = Modifier.fillMaxWidth()) {
-                        Row(
-                            modifier = Modifier.fillMaxWidth(),
-                            horizontalArrangement = Arrangement.SpaceBetween
-                        ) {
-                            Text("Sect Destiny Exp: ${state.sectRealmExp}/${state.sectRealmMaxExp}", fontSize = 11.sp, color = TextMuted)
-                            val pct = (state.sectRealmExp * 100f / state.sectRealmMaxExp.coerceAtLeast(1)).toInt().coerceIn(0, 100)
-                            Text("$pct%", fontSize = 11.sp, color = JadeCyan, fontWeight = FontWeight.Bold)
+                        // Sect Realm Ascension Progress
+                        Column(modifier = Modifier.fillMaxWidth()) {
+                            Row(
+                                modifier = Modifier.fillMaxWidth(),
+                                horizontalArrangement = Arrangement.SpaceBetween
+                            ) {
+                                Text("Sect Destiny Exp: ${state.sectRealmExp}/${state.sectRealmMaxExp}", fontSize = 11.sp, color = TextMuted)
+                                val pct = (state.sectRealmExp * 100f / state.sectRealmMaxExp.coerceAtLeast(1)).toInt().coerceIn(0, 100)
+                                Text("$pct%", fontSize = 11.sp, color = JadeCyan, fontWeight = FontWeight.Bold)
+                            }
+                            Spacer(modifier = Modifier.height(4.dp))
+                            LinearProgressIndicator(
+                                progress = { (state.sectRealmExp.toFloat() / state.sectRealmMaxExp.coerceAtLeast(1)).coerceIn(0f, 1f) },
+                                modifier = Modifier
+                                    .fillMaxWidth()
+                                    .height(6.dp)
+                                    .clip(RoundedCornerShape(3.dp)),
+                                color = JadeCyan,
+                                trackColor = TwilightElevated
+                            )
                         }
-                        Spacer(modifier = Modifier.height(4.dp))
-                        LinearProgressIndicator(
-                            progress = { (state.sectRealmExp.toFloat() / state.sectRealmMaxExp.coerceAtLeast(1)).coerceIn(0f, 1f) },
-                            modifier = Modifier
-                                .fillMaxWidth()
-                                .height(6.dp)
-                                .clip(RoundedCornerShape(3.dp)),
-                            color = JadeCyan,
-                            trackColor = TwilightElevated
-                        )
                     }
                 }
             }
         }
-    }
+
+        // Active Random Sect Encounter Alert Banner (If present)
+        state.activeEncounter?.let { encounter ->
+            item {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .clip(RoundedCornerShape(16.dp))
+                        .clickable { showEncounterDialog = true }
+                        .testTag("active_encounter_banner"),
+                    shape = RoundedCornerShape(16.dp),
+                    colors = CardDefaults.cardColors(containerColor = TwilightElevated),
+                    border = androidx.compose.foundation.BorderStroke(2.dp, Brush.horizontalGradient(listOf(LotusPink, CelestialGold)))
+                ) {
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(14.dp),
+                        horizontalArrangement = Arrangement.SpaceBetween,
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Row(
+                            modifier = Modifier.weight(1f),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.spacedBy(10.dp)
+                        ) {
+                            Box(
+                                modifier = Modifier
+                                    .size(42.dp)
+                                    .clip(CircleShape)
+                                    .background(LotusPink.copy(alpha = 0.25f))
+                                    .border(1.dp, LotusPink, CircleShape),
+                                contentAlignment = Alignment.Center
+                            ) {
+                                Text(encounter.iconEmoji, fontSize = 22.sp)
+                            }
+                            Column {
+                                Text(
+                                    text = "⚡ Sect Event: ${encounter.title}",
+                                    fontWeight = FontWeight.Bold,
+                                    fontSize = 13.sp,
+                                    color = CelestialGold
+                                )
+                                Text(
+                                    text = "${encounter.chineseTitle} · Tap to decide sect action",
+                                    fontSize = 11.sp,
+                                    color = LotusPink
+                                )
+                            }
+                        }
+                        Button(
+                            onClick = { showEncounterDialog = true },
+                            colors = ButtonDefaults.buttonColors(containerColor = LotusPink),
+                            contentPadding = PaddingValues(horizontal = 12.dp, vertical = 6.dp),
+                            modifier = Modifier.testTag("open_encounter_btn")
+                        ) {
+                            Text("Decide", fontSize = 11.sp, color = Color.White, fontWeight = FontWeight.Bold)
+                        }
+                    }
+                }
+            }
+        }
 
         // Treasury Matrix
         item {
@@ -164,6 +265,82 @@ fun SectOverviewTab(
                 ResourceCard("🌱 Spirit Herbs", "${state.spiritHerbs}", SuccessGreen, Modifier.weight(1f))
                 ResourceCard("⛏️ Spirit Ores", "${state.spiritOres}", CelestialAmber, Modifier.weight(1f))
                 ResourceCard("✨ Dao Essence", "${state.essence}", SpiritPurple, Modifier.weight(1f))
+            }
+        }
+
+        // Milestones & Trophies Feature Card
+        item {
+            val claimableCount = state.milestones.count { it.isCompleted && !it.isClaimed }
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clip(RoundedCornerShape(16.dp))
+                    .clickable { showAchievementsDialog = true }
+                    .testTag("milestones_overview_card"),
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = TwilightSurface),
+                border = androidx.compose.foundation.BorderStroke(
+                    1.2.dp,
+                    if (claimableCount > 0) CelestialGold else TwilightBorder
+                )
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(14.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        modifier = Modifier.weight(1f),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(38.dp)
+                                .clip(CircleShape)
+                                .background(CelestialGold.copy(alpha = 0.25f))
+                                .border(1.dp, CelestialGold, CircleShape),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text("🏆", fontSize = 18.sp)
+                        }
+                        Column {
+                            Text(
+                                text = "Milestones & Achievements",
+                                fontWeight = FontWeight.Bold,
+                                fontSize = 13.sp,
+                                color = CloudMistWhite
+                            )
+                            Text(
+                                text = "${state.milestones.count { it.isClaimed }}/${state.milestones.size} Completed" +
+                                        (if (claimableCount > 0) " · $claimableCount ready to claim!" else ""),
+                                fontSize = 11.sp,
+                                color = if (claimableCount > 0) CelestialGold else TextMuted
+                            )
+                        }
+                    }
+
+                    if (claimableCount > 0) {
+                        Button(
+                            onClick = { showAchievementsDialog = true },
+                            colors = ButtonDefaults.buttonColors(containerColor = CelestialGold),
+                            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
+                            modifier = Modifier.testTag("claim_milestone_badge_btn")
+                        ) {
+                            Text("Claim ($claimableCount)", fontSize = 11.sp, color = Color.Black, fontWeight = FontWeight.Bold)
+                        }
+                    } else {
+                        OutlinedButton(
+                            onClick = { showAchievementsDialog = true },
+                            contentPadding = PaddingValues(horizontal = 10.dp, vertical = 4.dp),
+                            border = androidx.compose.foundation.BorderStroke(1.dp, TwilightBorder)
+                        ) {
+                            Text("View", fontSize = 11.sp, color = CloudMistWhite)
+                        }
+                    }
+                }
             }
         }
 
@@ -242,6 +419,58 @@ fun SectOverviewTab(
                             color = if (state.economy.netDailySS >= 0) SuccessGreen else DangerRed,
                             fontWeight = FontWeight.Bold
                         )
+                    }
+                }
+            }
+        }
+
+        // Heavenly Security & MFA Protection Shield
+        item {
+            Spacer(modifier = Modifier.height(6.dp))
+            Card(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .testTag("heavenly_security_card")
+                    .clip(RoundedCornerShape(16.dp))
+                    .clickable { showSecurityDialog = true },
+                shape = RoundedCornerShape(16.dp),
+                colors = CardDefaults.cardColors(containerColor = TwilightSurface),
+                border = androidx.compose.foundation.BorderStroke(1.dp, Brush.horizontalGradient(listOf(JadeCyan, CelestialGold)))
+            ) {
+                Row(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(14.dp),
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
+                    Row(
+                        modifier = Modifier.weight(1f),
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(10.dp)
+                    ) {
+                        Box(
+                            modifier = Modifier
+                                .size(38.dp)
+                                .clip(CircleShape)
+                                .background(JadeDark.copy(alpha = 0.35f))
+                                .border(1.dp, CelestialGold, CircleShape),
+                            contentAlignment = Alignment.Center
+                        ) {
+                            Text("🛡️", fontSize = 18.sp)
+                        }
+                        Column {
+                            Text("Heavenly Security & MFA Shield", fontWeight = FontWeight.Bold, fontSize = 13.sp, color = CloudMistWhite)
+                            Text("2FA TOTP · AES-256 Vault · WAF SQLi/XSS Guard", fontSize = 11.sp, color = JadeCyan)
+                        }
+                    }
+                    Button(
+                        onClick = { showSecurityDialog = true },
+                        modifier = Modifier.testTag("open_security_dialog_btn"),
+                        colors = ButtonDefaults.buttonColors(containerColor = JadeDark),
+                        contentPadding = PaddingValues(horizontal = 10.dp, vertical = 6.dp)
+                    ) {
+                        Text("Manage", fontSize = 11.sp, color = CloudMistWhite)
                     }
                 }
             }

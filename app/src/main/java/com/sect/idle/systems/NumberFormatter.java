@@ -1,55 +1,75 @@
 package com.sect.idle.systems;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 
 public final class NumberFormatter {
     private static final String[] SUFFIXES = {"","K","M","B","T","Qa","Qi","Sx","Sp","Oc","No","Dc"};
-    private static final DecimalFormat DF = new DecimalFormat("0.0");
-    private static final DecimalFormat DF2 = new DecimalFormat("0.00");
-    private static final DecimalFormat DF_INT = new DecimalFormat("#,###");
+    
+    private static final ThreadLocal<DecimalFormat> DF_HOLDER = new ThreadLocal<DecimalFormat>() {
+        @Override
+        protected DecimalFormat initialValue() {
+            return new DecimalFormat("0.0", new DecimalFormatSymbols(Locale.US));
+        }
+    };
+    
+    private static final ThreadLocal<DecimalFormat> DF2_HOLDER = new ThreadLocal<DecimalFormat>() {
+        @Override
+        protected DecimalFormat initialValue() {
+            return new DecimalFormat("0.00", new DecimalFormatSymbols(Locale.US));
+        }
+    };
+    
+    private static final ThreadLocal<DecimalFormat> DF_INT_HOLDER = new ThreadLocal<DecimalFormat>() {
+        @Override
+        protected DecimalFormat initialValue() {
+            return new DecimalFormat("#,###", new DecimalFormatSymbols(Locale.US));
+        }
+    };
 
     private NumberFormatter() {}
 
     public static String format(long num) {
         if (num < 1000L) return String.valueOf(num);
-        if (num < 1000000L) return DF_INT.format(num);
+        if (num < 1000000L) return DF_INT_HOLDER.get().format(num);
         int idx = 0;
         double d = num;
         while (d >= 1000.0 && idx < SUFFIXES.length - 1) { d /= 1000.0; idx++; }
-        return DF.format(d) + SUFFIXES[idx];
+        return DF_HOLDER.get().format(d) + SUFFIXES[idx];
     }
 
     public static String format(long num, StringBuilder sb) {
         if (sb == null) return format(num);
         sb.setLength(0);
         if (num < 1000L) return sb.append(num).toString();
-        if (num < 1000000L) return sb.append(DF_INT.format(num)).toString();
+        if (num < 1000000L) return sb.append(DF_INT_HOLDER.get().format(num)).toString();
         int idx = 0;
         double d = num;
         while (d >= 1000.0 && idx < SUFFIXES.length - 1) { d /= 1000.0; idx++; }
-        return sb.append(DF.format(d)).append(SUFFIXES[idx]).toString();
+        return sb.append(DF_HOLDER.get().format(d)).append(SUFFIXES[idx]).toString();
     }
 
     public static String format(double num) {
-        if (num < 1000.0) return DF2.format(num);
+        if (num < 1000.0) return DF2_HOLDER.get().format(num);
         int idx = 0;
         double d = num;
         while (d >= 1000.0 && idx < SUFFIXES.length - 1) { d /= 1000.0; idx++; }
-        return DF.format(d) + SUFFIXES[idx];
+        return DF_HOLDER.get().format(d) + SUFFIXES[idx];
     }
 
     public static String format(double num, StringBuilder sb) {
         if (sb == null) return format(num);
         sb.setLength(0);
-        if (num < 1000.0) return sb.append(DF2.format(num)).toString();
+        if (num < 1000.0) return sb.append(DF2_HOLDER.get().format(num)).toString();
         int idx = 0;
         double d = num;
         while (d >= 1000.0 && idx < SUFFIXES.length - 1) { d /= 1000.0; idx++; }
-        return sb.append(DF.format(d)).append(SUFFIXES[idx]).toString();
+        return sb.append(DF_HOLDER.get().format(d)).append(SUFFIXES[idx]).toString();
     }
 
     public static String formatInt(long num) {
-        return DF_INT.format(num);
+        return DF_INT_HOLDER.get().format(num);
     }
 
     public static String formatPercent(float f) {
