@@ -24,11 +24,14 @@ android {
   }
 
   signingConfigs {
-    create("debugConfig") {
-      storeFile = file("${rootDir}/debug.keystore")
-      storePassword = "android"
-      keyAlias = "androiddebugkey"
-      keyPassword = "android"
+    val localDebugKeystore = file("${rootDir}/debug.keystore")
+    if (localDebugKeystore.exists()) {
+      create("debugConfig") {
+        storeFile = localDebugKeystore
+        storePassword = "android"
+        keyAlias = "androiddebugkey"
+        keyPassword = "android"
+      }
     }
     create("release") {
       val envKeystorePath = System.getenv("KEYSTORE_PATH")
@@ -38,12 +41,18 @@ android {
         storePassword = System.getenv("STORE_PASSWORD")
         keyAlias = "upload"
         keyPassword = System.getenv("KEY_PASSWORD")
-      } else {
-        // Fallback to debug keystore for release builds if no custom release keystore provided
-        storeFile = file("${rootDir}/debug.keystore")
+      } else if (localDebugKeystore.exists()) {
+        storeFile = localDebugKeystore
         storePassword = "android"
         keyAlias = "androiddebugkey"
         keyPassword = "android"
+      } else {
+        // Fallback to standard AGP debug signing config
+        val defaultDebugConfig = signingConfigs.getByName("debug")
+        storeFile = defaultDebugConfig.storeFile
+        storePassword = defaultDebugConfig.storePassword
+        keyAlias = defaultDebugConfig.keyAlias
+        keyPassword = defaultDebugConfig.keyPassword
       }
     }
   }
@@ -56,7 +65,10 @@ android {
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
       signingConfig = signingConfigs.getByName("release")
     }
-    debug { signingConfig = signingConfigs.getByName("debugConfig") }
+    debug {
+      val customDebugConfig = signingConfigs.findByName("debugConfig")
+      signingConfig = customDebugConfig ?: signingConfigs.getByName("debug")
+    }
   }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
