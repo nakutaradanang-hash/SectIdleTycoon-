@@ -24,12 +24,6 @@ android {
   }
 
   signingConfigs {
-    create("debugConfig") {
-      storeFile = file("${rootDir}/debug.keystore")
-      storePassword = "android"
-      keyAlias = "androiddebugkey"
-      keyPassword = "android"
-    }
     create("release") {
       val envKeystorePath = System.getenv("KEYSTORE_PATH")
       val customKeystore = envKeystorePath?.let { file(it) }
@@ -39,11 +33,12 @@ android {
         keyAlias = "upload"
         keyPassword = System.getenv("KEY_PASSWORD")
       } else {
-        // Fallback to debug keystore for release builds if no custom release keystore provided
-        storeFile = file("${rootDir}/debug.keystore")
-        storePassword = "android"
-        keyAlias = "androiddebugkey"
-        keyPassword = "android"
+        // Fallback to debug signing config if no custom release keystore provided
+        val debugSigning = signingConfigs.getByName("debug")
+        storeFile = debugSigning.storeFile
+        storePassword = debugSigning.storePassword
+        keyAlias = debugSigning.keyAlias
+        keyPassword = debugSigning.keyPassword
       }
     }
   }
@@ -56,7 +51,7 @@ android {
       proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
       signingConfig = signingConfigs.getByName("release")
     }
-    debug { signingConfig = signingConfigs.getByName("debugConfig") }
+    debug { signingConfig = signingConfigs.getByName("debug") }
   }
   compileOptions {
     sourceCompatibility = JavaVersion.VERSION_11
