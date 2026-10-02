@@ -1,6 +1,6 @@
 # 🌌 Xianxia Immortal Sect Idle — Multi-Platform Build & Coroutine Engine Guide
 
-Panduan lengkap mengenai arsitektur **Background Game Loop (Kotlin Coroutines)** dan **Sistem Build Artefak Multi-Platform GitHub Actions** untuk seluruh perangkat (Desktop & Mobile: Windows, Linux, macOS, iOS, dan Android).
+Panduan lengkap mengenai arsitektur **Background Game Loop (Kotlin Coroutines)** dan **Sistem Build Artefak Multi-Platform GitHub Actions** untuk seluruh perangkat (Desktop, Mobile, dan Web PWA: Windows, Linux, macOS, iOS, Android, dan Web Browsers).
 
 ---
 
@@ -46,6 +46,18 @@ Alur kerja CI/CD GitHub Actions (`.github/workflows/multiplatform-artifacts.yml`
 | **Windows (x64)** | `sect-idle-windows-x64.zip` | Portable package lengkap dengan *Batch Launcher* (`Launch-SectIdle.bat`) dan *PowerShell Runner*. |
 | **Linux (x64 / ARM64)** | `sect-idle-linux-x64.tar.gz` | Paket standalone tarball dengan binary launcher (`sect-idle-linux`) dan berkas `.desktop` untuk app menu. |
 | **macOS (Universal)** | `sect-idle-macos-universal.tar.gz` | Paket `.app` Universal Bundle yang kompatibel dengan Apple Silicon (M1/M2/M3/M4) dan Intel x64. |
+
+### 🌸 Distribusi Web Game & PWA (Progressive Web App)
+
+| Target Platform | Format Artefak | Keterangan & Lingkungan Build |
+| :--- | :--- | :--- |
+| **Web Browser / Standalone PWA** | `sect-idle-web-pwa.zip` & `sect-idle-web-pwa.tar.gz` | Bundel PWA Web Game lengkap dengan App Shell (`index.html`), Web Manifest (`manifest.json`), Service Worker (`sw.js`), Audio Synth, & Caching Offline. |
+
+#### ⚡ Cara Menjalankan & Memasang PWA Web Game Installer:
+1. Ekstrak `sect-idle-web-pwa.zip` atau `sect-idle-web-pwa.tar.gz` ke server web / hosting statis (GitHub Pages, Netlify, Vercel, Nginx, Apache).
+2. Buka URL aplikasi di browser modern (Chrome, Edge, Safari, Firefox).
+3. Klik tombol **"⚡ Install PWA App"** atau menu browser **"Add to Home Screen / Install App"** untuk memasang game sebagai aplikasi desktop/mobile mandiri (*standalone window*) tanpa bilah URL.
+4. Game dapat dimainkan secara **offline** tanpa koneksi internet menggunakan dukungan Service Worker caching & `localStorage` game save.
 
 ---
 
