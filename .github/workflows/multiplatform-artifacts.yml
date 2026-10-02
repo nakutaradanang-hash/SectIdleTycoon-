@@ -219,12 +219,41 @@ jobs:
           retention-days: 30
 
   # =========================================================================
-  # 6. UNIFIED MULTI-PLATFORM RELEASE & MANIFEST DISTRIBUTION
+  # 6. WEB PWA MATRIX: PROGRESSIVE WEB APP GAME (OFFLINE & INSTANT PLAY)
+  # =========================================================================
+  build_pwa:
+    name: "🌐 Web: Progressive Web App (PWA & Offline Web Game)"
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Make Packager Executable
+        run: chmod +x scripts/package-web-pwa.sh
+
+      - name: Build Web PWA Game Bundle
+        run: ./scripts/package-web-pwa.sh
+
+      - name: Upload Web PWA Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-web-pwa
+          path: |
+            build/dist/sect-idle-web-pwa.zip
+            build/dist/sect-idle-web-pwa.tar.gz
+            build/dist/sect-idle-web-pwa.zip.sha256
+            build/dist/sect-idle-web-pwa.tar.gz.sha256
+          retention-days: 30
+
+  # =========================================================================
+  # 7. UNIFIED MULTI-PLATFORM RELEASE & MANIFEST DISTRIBUTION
   # =========================================================================
   publish_multiplatform_release:
     name: "🌐 Multi-Platform Release Publisher"
     runs-on: ubuntu-latest
-    needs: [build_android, build_ios, build_linux, build_windows, build_macos]
+    needs: [build_android, build_ios, build_linux, build_windows, build_macos, build_pwa]
     if: always()
 
     steps:
@@ -254,6 +283,7 @@ jobs:
           echo "| 🐧 **Desktop (Linux)** | Linux x64 / Debian / RHEL / Arch | \`sect-idle-linux-x64.tar.gz\` | ✅ Built |" >> $GITHUB_STEP_SUMMARY
           echo "| 🪟 **Desktop (Windows)** | Windows 10/11 x64 Portable | \`sect-idle-windows-x64.zip\` | ✅ Built |" >> $GITHUB_STEP_SUMMARY
           echo "| 🍎 **Desktop (macOS)** | Universal (M1-M4 & Intel x64) | \`sect-idle-macos-universal.tar.gz\` | ✅ Built |" >> $GITHUB_STEP_SUMMARY
+          echo "| 🌸 **Web (PWA)** | Web Browsers / Standalone PWA | \`sect-idle-web-pwa.zip\`, \`sect-idle-web-pwa.tar.gz\` | ✅ Built |" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "⚡ All multi-platform artifacts packaged, cryptographically hashed, and uploaded." >> $GITHUB_STEP_SUMMARY
 
@@ -268,7 +298,7 @@ jobs:
           body: |
             ## 🌸 Xianxia Immortal Sect Idle — Multi-Platform Release
             
-            Multi-platform packages for Mobile (Android/iOS) and Desktop (Windows/Linux/macOS).
+            Multi-platform packages for Mobile (Android/iOS), Desktop (Windows/Linux/macOS), and Web (PWA).
             
             ### 📱 Mobile Distributions
             - **Android Universal APK**: `sect-idle-release.apk`
@@ -280,6 +310,9 @@ jobs:
             - **Linux x64**: `sect-idle-linux-x64.tar.gz` (Includes Desktop Entry & Executable Script)
             - **macOS Universal**: `sect-idle-macos-universal.tar.gz` (Apple Silicon & Intel)
             
+            ### 🌐 Web & PWA Distributions
+            - **PWA Web Game Package**: `sect-idle-web-pwa.zip` & `sect-idle-web-pwa.tar.gz` (Standalone PWA Shell & Offline Cache)
+
             ### 🔐 Cryptographic Checksums
             See `SHA256SUMS-ALL-PLATFORMS.txt` for integrity verification.
         env:

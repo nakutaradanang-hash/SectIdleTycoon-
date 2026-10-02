@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="bgGrad512" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a1b4e"/>
+      <stop offset="100%" stop-color="#0f081d"/>
+    </radialGradient>
+    <linearGradient id="goldGrad512" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffe57f"/>
+      <stop offset="50%" stop-color="#ffb300"/>
+      <stop offset="100%" stop-color="#ff6f00"/>
+    </linearGradient>
+    <linearGradient id="cyanGrad512" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#80deea"/>
+      <stop offset="100%" stop-color="#00acc1"/>
+    </linearGradient>
+    <filter id="glow512">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="512" height="512" rx="96" fill="url(#bgGrad512)"/>
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#ffe57f" stroke-width="3" stroke-dasharray="16,10" opacity="0.4"/>
+
+  <!-- Aura Circles -->
+  <circle cx="256" cy="256" r="170" fill="#7c4dff" opacity="0.18" filter="url(#glow512)"/>
+
+  <!-- Pagoda Roof Tier 3 (Top) -->
+  <path d="M 256,96 L 216,140 L 296,140 Z" fill="url(#goldGrad512)"/>
+  <!-- Pagoda Roof Tier 2 -->
+  <path d="M 256,134 L 190,185 L 322,185 Z" fill="url(#goldGrad512)"/>
+  <!-- Pagoda Roof Tier 1 (Bottom) -->
+  <path d="M 256,178 L 158,240 L 354,240 Z" fill="url(#goldGrad512)"/>
+
+  <!-- Pagoda Body -->
+  <rect x="198" y="240" width="116" height="110" fill="#1f1137" stroke="url(#goldGrad512)" stroke-width="5"/>
+  <rect x="230" y="278" width="52" height="72" rx="26" fill="url(#cyanGrad512)"/>
+
+  <!-- Flying Swords -->
+  <g stroke="url(#cyanGrad512)" stroke-width="7" stroke-linecap="round" filter="url(#glow512)">
+    <!-- Sword Left -->
+    <path d="M 116,320 L 154,270"/>
+    <path d="M 110,326 L 104,340 M 122,332 L 100,310"/>
+    <!-- Sword Right -->
+    <path d="M 396,320 L 358,270"/>
+    <path d="M 402,326 L 408,340 M 390,332 L 412,310"/>
+  </g>
+
+  <!-- Eight Trigrams / Yin Yang Accent Dot -->
+  <circle cx="256" cy="74" r="14" fill="#00e5ff" filter="url(#glow512)"/>
+
+  <!-- Text Label -->
+  <text x="256" y="435" text-anchor="middle" fill="#ffe57f" font-family="'Cinzel', 'Trajan Pro', sans-serif" font-weight="bold" font-size="42" letter-spacing="4">SECT IDLE</text>
+</svg>
